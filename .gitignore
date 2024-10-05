@@ -1,0 +1,6 @@
+# Vim swap files
+**/*.swp
+
+# Do not upload ROMs, original or otherwise
+**/*.sfc
+**/*.smc

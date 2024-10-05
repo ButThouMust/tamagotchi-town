@@ -1,0 +1,101 @@
+ID | offset  | description
+---+---------+--------------------------
+00 | 0x4018C | landscapes
+01 | 0x411DF | 
+02 | 0x416FB | 
+03 | 0x41A05 | clock, game windows
+04 | 0x42719 | hands
+05 | 0x42BA8 | 
+06 | 0x43079 | 4bpp
+07 | 0x44CB6 | 4bpp
+08 | 0x46822 | 4bpp
+09 | 0x47F33 | 4bpp
+10 | 0x48E3F | 
+11 | 0x49140 | 
+12 | 0x4943D | 
+13 | 0x498A0 | 
+14 | 0x49C7E | landscapes
+15 | 0x4AB34 | 'OK', egg, hand
+16 | 0x4B19F | 4bpp
+17 | 0x4BB1F | 
+18 | 0x4BE1B | 
+19 | 0x4C099 | FONT 1
+20 | 0x4DAA4 | icons
+21 | 0x4DD97 | 
+22 | 0x4F887 | 
+23 | 0x51416 | don't know
+24 | 0x522AF | don't know
+25 | 0x53A90 | 
+26 | 0x53DD9 | 
+27 | 0x541A7 | 
+28 | 0x5451F | 
+29 | 0x548A1 | 4bpp
+30 | 0x55025 | 
+31 | 0x55294 | text
+32 | 0x56682 | 
+33 | 0x56937 | prof banzo and mikachu
+34 | 0x587FE | たまごっち
+35 | 0x58FD9 | 新種発見！！たまごっち
+36 | 0x599A7 | てんしっちのたまごっち
+37 | 0x5A621 | 森で発見！！たまごっち
+38 | 0x5AFE0 | 海で発見！！たまごっち
+39 | 0x5B80B | title logo たまごっちタウン
+40 | 0x5BF89 | windy meadow
+41 | 0x5D2C7 | meadow
+42 | 0x5E8E5 | clouds
+43 | 0x5F68B | forest
+44 | 0x60CA1 | underwater with seaweed
+45 | 0x61F2C | tree with mountain
+46 | 0x63130 | prof & mikachu
+47 | 0x65284 | 24 tamagotchis
+48 | 0x66130 | 
+49 | 0x6632A | 
+50 | 0x6661A | 4 tamagotchis
+51 | 0x66853 | 4 tamagotchis
+52 | 0x66B04 | 4 tamagotchis
+53 | 0x66E2D | 4 tamagotchis
+54 | 0x6707C | 4 tamagotchis
+55 | 0x67300 | 4 tamagotchis
+56 | 0x67659 | possible text
+57 | 0x67C1C | 
+58 | 0x67DC8 | text
+59 | 0x68231 | 
+60 | 0x683B4 | 4bpp
+61 | 0x6880A | 
+62 | 0x68A40 | FONT 2
+63 | 0x69FD4 | possible text
+64 | 0x6A541 | 
+65 | 0x6A6E7 | mikachu icon
+66 | 0x6A907 | possible text
+67 | 0x6B194 | 
+68 | 0x6B39F | 4bpp
+69 | 0x6C451 | 
+70 | 0x6C55A | inside of a room
+71 | 0x6CE70 | tilemaps
+72 | 0x6D0B7 | various tamas
+73 | 0x6F9EE | 4bpp
+74 | 0x70D73 | 
+75 | 0x70F04 | 
+76 | 0x71097 | inside of a room
+77 | 0x717BF | tilemap
+78 | 0x71A06 | clock
+79 | 0x71DCB | 4bpp
+80 | 0x71E34 | icons
+81 | 0x721C8 | various tamas
+82 | 0x73D96 | 4bpp
+83 | 0x74C56 | 
+84 | 0x74F2E | 4bpp
+85 | 0x7545D | tilemap
+86 | 0x7559C | tilemap
+87 | 0x756DB | 4bpp, don't know
+88 | 0x78328 | tilemap
+89 | 0x789A3 | 4bpp, don't know
+90 | 0x7B907 | tilemap
+91 | 0x7C061 | 4bpp, egg, cross, !
+92 | 0x7C345 | 4bpp
+93 | 0x7C696 | 4bpp
+94 | 0x7C9D0 | 4bpp
+95 | 0x7CCFD | 4bpp
+96 | 0x7D034 | 
+97 | 0x7D47F | tilemap
+98 | 0x7D640 | 未発見

@@ -1,0 +1,227 @@
+$81904d - How the game DMAs the font into VRAM after decompressing it into
+buffer at $7F0000.
+
+ldy #$0000      ; construct data's source address: first the bank offset 0000
+sty $4302
+lda #$7f        ; then the bank number 7F; i.e. address is $7F0000
+sta $4304
+
+ldy $a9         ; get # bytes to copy from address
+sty $4305
+
+ldy $907b,x     ; get word address to copy to in VRAM - in this case, 0x3000
+sty $2116       ; 
+
+lda #$18        ; destination for data is VRAM; $2118 is "write to VRAM" port
+sta $4301
+
+lda #$01        ; 01 is DMA parameters: copy data from WRAM into VRAM, two bytes
+sta $4300       ; at a time
+sta $420b       ; initiate DMA transfer on channel 0
+
+Summary: The font is a 0x4000 byte block from $7F0000 - $7F3FFF that is DMA'd to
+VRAM word address $3000.
+
+--------------------------------------------------------------------------------
+
+$818FF0: Subroutine that takes an input at $9C and uses it to index compressed
+(?) graphics at $819075.
+
+Take byte in $9C and bitshift it left by 3 (read with 8 bit arith, bitshift with
+16 bit arith).
+In this case, the value is 0x17 -> 0xB8.
+Get a byte indexed at $819075 and left shift it twice.
+$819075 + $B8 = $81912D
+The byte here is 0x13 -> 0x4C
+
+$81900D:
+Keep value of B8 for later.
+Use 0x4C to get a 24-bit pointer indexed from $888000.
+In this case, the pointer is $89C099.
+- Y reg gets the bank offset $C099
+- Save current data bank, and set bank from pointer $89 to data bank.
+
+Now call $819D58 (details in separate section).
+This decompresses the graphics into a buffer in WRAM at $7F0000.
+
+Restore data bank and value of B8 (index for list at $819075).
+Byte 01 of 8 byte struct: If 0, skip interpretting bytes 02-03 and 04.
+    Otherwise, construct a 24-bit pointer from bytes 02-04 in $79-$7B.
+    Then copy the data from $7F0000 into the pointer.
+
+Byte 05 of 8 byte struct: If 0, skip interpretting bytes 06-07.
+    Otherwise, set up a DMA for the graphics from $7F0000 to the VRAM word
+    address specified in bytes 06-07.
+
+--------------------------------------------------------------------------------
+
+$818BFC: Code that, given an input in $4A, addresses a list at $818C74 of
+offsets from $818CB2. Each offset points to a list (terminated by an [FF] byte)
+of IDs for the 8 byte graphics structures.
+
+The list of offsets:
+0000 0000 000B 0016 001F 0028 0031 003A 0041 0048 004F 0056 005D 0064 006B 0072
+0077 007E 0085 008C 0093 0094 0095 0099 009C 00A2 00A5 00A6 00AA 00AB 00AC
+
+Is it possible that the list may reuse the [00 01] at the beginning of the first
+list as an offset 0100?
+
+For example, the list at offset 000B would be at $818CB2 + B = $818CBD.
+
+0000: 00 01 02 04 0E 0F 52 53 13 54 FF
+000B: 00 05 02 03 04 60 10 11 12 13 FF
+0016: 06 0A 19 1D 17 18 51 61 FF
+001F: 07 0B 1A 1E 17 18 51 62 FF
+0028: 08 0C 1B 1F 17 18 51 63 FF
+0031: 09 0D 1C 20 17 18 51 64 FF
+003A: 17 21 22 23 24 25 FF
+0041: 26 2C 33 34 32 35 FF
+0048: 27 2D 33 34 32 36 FF
+004F: 28 2E 33 34 32 37 FF
+0056: 29 2F 33 34 32 38 FF
+005D: 2A 30 33 34 32 39 FF
+0064: 2B 31 33 34 32 3A FF
+006B: 3B 3C 3D 3E 0F 17 FF
+0072: 40 41 42 67 FF
+0077: 17 43 44 21 22 45 FF
+007E: 17 46 47 21 22 0F FF
+0085: 17 48 49 4A 4B 4C FF
+008C: 17 4D 4E 4F 50 4C FF
+0093: FF
+0094: FF
+0095: 17 55 56 FF
+0099: 57 58 FF
+009C: 59 5A 5B 5C 5D FF
+00A2: 5E 5F FF
+00A5: FF
+00A6: 17 21 22 FF
+00AA: FF
+00AB: FF
+00AC: 17 65 66 FF
+
+--------------------------------------------------------------------------------
+
+$818C29: Code that given an input in $4A, addresses a list at $818D62 of offsets
+from $818DA0. Each offset points to a list (terminated by an [FF] byte) of byte
+pairs that get fed to the subroutine at $819417 as $9C (first) and $9E (second).
+
+Subroutine explanation:
+X reg <- $9C << 5 + 0x8000
+Y reg <- $9E << 5 + 0x1BE0
+A reg <- 0x1F
+MVN with these values and banks $84 and $00 = copy 0x20 bytes from bank 84 at
+bank offset into RAM.
+
+Then call $818B15 to set up, but not perform, a DMA with parameters:
+- unit size 1
+- destination is CGRAM
+- source address is $001BE0
+- total data size is $0200
+
+So each set of 0x20 bytes represents 0x10 color values, and they are in bank 84.
+
+Offset list:
+0000 0000 001B 0030 004D 006A 0087 00A4 00B1 00C6 00DB 00F0 0105 011A 012F 013A
+014F 015A 0165 017A 0191 0192 0193 01A8 01AD 01B4 01BB 01BC 01C9 01CA 01CB
+
+Unique entries for the values of $9C:
+00-17, 19, 1B-22, 24, 26, 28, 2B-32, 34, 35, 39-3C, 3F, 40, 44-47, 4A
+
+0000: 0001 0202 0303 0404 0505 0708 0109 1B06 0D00 0E0A 060B 1E0E 1F0F FF
+001B: 0001 0602 0708 3C07 0C06 0D00 0E0A 480D 1E0E 1F0F FF
+0030: 0801 1706 0D00 0F0E 100F 1108 1209 130A 140B 150C 160D 3C07 0604 4705 FF
+004D: 0901 1806 0D00 0F0E 100F 1108 1209 130A 140B 150C 160D 3C07 0604 4705 FF
+006A: 0A01 1906 0D00 0F0E 100F 1108 1209 130A 140B 150C 160D 3C07 0604 4705 FF
+0087: 0B01 1A06 0D00 0F0E 100F 1108 1209 130A 140B 150C 160D 3C07 0604 4705 FF
+00A4: 0D00 1B01 1C02 1D03 1E08 1F09 FF
+00B1: 2301 2002 1108 1209 130A 140B 150C 160D 210E 220F FF
+00C6: 2401 2002 1108 1209 130A 140B 150C 160D 210E 220F FF
+00DB: 2501 2002 1108 1209 130A 140B 150C 160D 210E 220F FF
+00F0: 2601 2002 1108 1209 130A 140B 150C 160D 210E 220F FF
+0105: 2701 2002 1108 1209 130A 140B 150C 160D 210E 220F FF
+011A: 2801 2002 1108 1209 130A 140B 150C 160D 210E 220F FF
+012F: 0D00 2901 3302 2A03 0708 FF
+013A: 3200 2B01 2C08 2D09 2E0A 2F0B 300C 310D 310F 4A0E FF
+014F: 0D00 3401 3502 1B03 3608 FF
+015A: 0D00 3401 3502 1B03 0708 FF
+0165: 0D00 3A01 3907 1108 1209 130A 140B 150C 160D 0F0F FF
+017A: 0D00 3901 3A02 3B03 1108 1209 130A 140B 150C 160D 0F0F FF
+0191: FF
+0192: FF
+0193: 0D00 3D01 1102 1203 1304 1405 1506 1607 3D08 3E09 FF
+01A8: 3F06 4007 FF
+01AD: 4105 4206 4307 FF
+01B4: 4405 4506 4607 FF
+01BB: FF
+01BC: 0D00 1B01 1C02 1D03 1E08 1F09 FF
+01C9: FF
+01CA: FF
+01CB: 0D00 4901 1E0E 1F0F FF
+Data end at $818F73.
+
+--------------------------------------------------------------------------------
+
+$819D58: At a high level, decompresses graphics from somewhere in ROM to a
+buffer in WRAM.
+Let's continue with the pointer at $89C099 as an example.
+
+The first two bytes at the pointer are 0x4000. Store this to $A9.
+This is the number of bytes that it should decompress to.
+
+Set WRAM address (bank offset) to $0000.
+Use the upper half of work RAM (bank $7F).
+- Accomplish by writing #$01 to $2183.
+
+Set $AB to 01; this is # bits left in bit flags buffer.
+When 0, have to read another byte's worth of bit flags.
+
+Loop starting at $819D6C {
+    Decrement $AB and see if 0x00.
+    If yes {
+        check if X >= $A9 (written all bytes for the data block)
+        if yes, RTL
+        otherwise, load a byte from the pointer
+        - advance pointer and do LoROM bank wrap if needed
+        store byte to $AC - bit flags for how to interpret data
+        set $AB to 0x08
+    }
+    LSR the value in the bit flags buffer and check if shifted a 0 or 1
+    if shifted out a 1 {
+        check if X >= $A9 (written all bytes for the data block)
+        if yes, RTL
+        otherwise, get a byte from the pointer
+        - advance pointer and do LoROM bank wrap if needed
+        write the byte to WRAM
+        increment X = # of bytes written to there
+        go back to start of loop
+    }
+    else if shifted out a 0 {
+        check if X >= $A9 (written all bytes for the data block)
+        if yes, RTL
+        otherwise, read a byte B0 from the pointer
+        - advance pointer and do LoROM bank wrap if needed
+        store byte B0 to $AD - low byte of 12-bit value
+        
+        check if X >= $A9 (written all bytes for the data block)
+        if yes, RTL
+        otherwise, read a byte B1 from the pointer
+        - advance pointer and do LoROM bank wrap if needed
+        store (B1 >> 4) to $AE
+        store (B1 & 0xF) + 2 to $AF
+        - example, if you got 0C, you would get [00 0E]
+        
+        push pointer to stack to save for later
+        - set up for an MVN; X is position for where to write next byte
+        Y (dest addr)   <- X
+        A (# bytes - 1) <- $AF = (B1 & 0xF) + 2
+        X (src addr)    <- X - (B0 + $AE<<8) - 1
+            - this is a two byte subtraction with X - $AD
+        do the MVN: copy [(B1 & 0xF) + 3] bytes from [X - B0 - 1] to X
+
+        conclude: B0 = # bytes to go back; B1 = related to # bytes to copy
+
+        X <- current value of Y = next address to write to in WRAM
+        set this as position to next write to in the "shifted out 1" case
+        restore the pointer value
+    }
+}

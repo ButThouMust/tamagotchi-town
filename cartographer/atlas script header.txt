@@ -1,0 +1,7 @@
+#VAR(Table, TABLE)
+// Uncomment one line based on the particular script file you will put this in.
+//#ADDTBL("tamagotchi town little endian.tbl", Table)
+//#ADDTBL("tamagotchi town little endian tamas.tbl", Table)
+#ACTIVETBL(Table)
+
+#SMA("LOROM80")

@@ -1,0 +1,1871 @@
+000073,bitmask_to_reset_sprite_OAM_bits,
+000075,bitmask_for_sprite_size,
+001BE0,CGRAM_buffer_bank_00,
+001DE0,OAM_buffer_bank_00,
+001FE0,OAM_sprite_sizes_bank_00,
+002100,INIDISP_bank_00,Screen Display Register
+002101,OBSEL_bank_00,Object Size and Character Size Register
+002102,OAMADDL_bank_00,OAM Address Registers (Low)
+002103,OAMADDH_bank_00,OAM Address Registers (High)
+002104,OAMDATA_bank_00,OAM Data Write Register
+002105,BGMODE_bank_00,BG Mode and Character Size Register
+002106,MOSAIC_bank_00,Mosaic Register
+002107,BG1SC_bank_00,BG Tilemap Address Registers (BG1)
+002108,BG2SC_bank_00,BG Tilemap Address Registers (BG2)
+002109,BG3SC_bank_00,BG Tilemap Address Registers (BG3)
+00210A,BG4SC_bank_00,BG Tilemap Address Registers (BG4)
+00210B,BG12NBA_bank_00,BG Character Address Registers (BG1&2)
+00210C,BG34NBA_bank_00,BG Character Address Registers (BG3&4)
+00210D,BG1HOFS_bank_00,BG Scroll Registers (BG1)
+00210E,BG1VOFS_bank_00,BG Scroll Registers (BG1)
+00210F,BG2HOFS_bank_00,BG Scroll Registers (BG2)
+002110,BG2VOFS_bank_00,BG Scroll Registers (BG2)
+002111,BG3HOFS_bank_00,BG Scroll Registers (BG3)
+002112,BG3VOFS_bank_00,BG Scroll Registers (BG3)
+002113,BG4HOFS_bank_00,BG Scroll Registers (BG4)
+002114,BG4VOFS_bank_00,BG Scroll Registers (BG4)
+002115,VMAIN_bank_00,Video Port Control Register
+002116,VMADDL_bank_00,VRAM Address Registers (Low)
+002117,VMADDH_bank_00,VRAM Address Registers (High)
+002118,VMDATAL_bank_00,VRAM Data Write Registers (Low)
+002119,VMDATAH_bank_00,VRAM Data Write Registers (High)
+00211A,M7SEL_bank_00,Mode 7 Settings Register
+00211B,M7A_bank_00,Mode 7 Matrix Registers
+00211C,M7B_bank_00,Mode 7 Matrix Registers
+00211D,M7C_bank_00,Mode 7 Matrix Registers
+00211E,M7D_bank_00,Mode 7 Matrix Registers
+00211F,M7X_bank_00,Mode 7 Matrix Registers
+002120,M7Y_bank_00,Mode 7 Matrix Registers
+002121,CGADD_bank_00,CGRAM Address Register
+002122,CGDATA_bank_00,CGRAM Data Write Register
+002123,W12SEL_bank_00,Window Mask Settings Registers
+002124,W34SEL_bank_00,Window Mask Settings Registers
+002125,WOBJSEL_bank_00,Window Mask Settings Registers
+002126,WH0_bank_00,Window Position Registers (WH0)
+002127,WH1_bank_00,Window Position Registers (WH1)
+002128,WH2_bank_00,Window Position Registers (WH2)
+002129,WH3_bank_00,Window Position Registers (WH3)
+00212A,WBGLOG_bank_00,Window Mask Logic registers (BG)
+00212B,WOBJLOG_bank_00,Window Mask Logic registers (OBJ)
+00212C,TM_bank_00,Screen Destination Registers
+00212D,TS_bank_00,Screen Destination Registers
+00212E,TMW_bank_00,Window Mask Destination Registers
+00212F,TSW_bank_00,Window Mask Destination Registers
+002130,CGWSEL_bank_00,Color Math Registers
+002131,CGADSUB_bank_00,Color Math Registers
+002132,COLDATA_bank_00,Color Math Registers
+002133,SETINI_bank_00,Screen Mode Select Register
+002134,MPYL_bank_00,Multiplication Result Registers
+002135,MPYM_bank_00,Multiplication Result Registers
+002136,MPYH_bank_00,Multiplication Result Registers
+002137,SLHV_bank_00,Software Latch Register
+002138,OAMDATAREAD_bank_00,OAM Data Read Register
+002139,VMDATALREAD_bank_00,VRAM Data Read Register (Low)
+00213A,VMDATAHREAD_bank_00,VRAM Data Read Register (High)
+00213B,CGDATAREAD_bank_00,CGRAM Data Read Register
+00213C,OPHCT_bank_00,Scanline Location Registers (Horizontal)
+00213D,OPVCT_bank_00,Scanline Location Registers (Vertical)
+00213E,STAT77_bank_00,PPU Status Register
+00213F,STAT78_bank_00,PPU Status Register
+002140,APUIO0_bank_00,APU IO Registers
+002141,APUIO1_bank_00,APU IO Registers
+002142,APUIO2_bank_00,APU IO Registers
+002143,APUIO3_bank_00,APU IO Registers
+002180,WMDATA_bank_00,WRAM Data Register
+002181,WMADDL_bank_00,WRAM Address Registers
+002182,WMADDM_bank_00,WRAM Address Registers
+002183,WMADDH_bank_00,WRAM Address Registers
+004016,JOYSER0_bank_00,Old Style Joypad Registers
+004017,JOYSER1_bank_00,Old Style Joypad Registers
+004200,NMITIMEN_bank_00,Interrupt Enable Register
+004201,WRIO_bank_00,IO Port Write Register
+004202,WRMPYA_bank_00,Multiplicand Registers
+004203,WRMPYB_bank_00,Multiplicand Registers
+004204,WRDIVL_bank_00,Divisor & Dividend Registers
+004205,WRDIVH_bank_00,Divisor & Dividend Registers
+004206,WRDIVB_bank_00,Divisor & Dividend Registers
+004207,HTIMEL_bank_00,IRQ Timer Registers (Horizontal - Low)
+004208,HTIMEH_bank_00,IRQ Timer Registers (Horizontal - High)
+004209,VTIMEL_bank_00,IRQ Timer Registers (Vertical - Low)
+00420A,VTIMEH_bank_00,IRQ Timer Registers (Vertical - High)
+00420B,MDMAEN_bank_00,DMA Enable Register
+00420C,HDMAEN_bank_00,HDMA Enable Register
+00420D,MEMSEL_bank_00,ROM Speed Register
+004210,RDNMI_bank_00,Interrupt Flag Registers
+004211,TIMEUP_bank_00,Interrupt Flag Registers
+004212,HVBJOY_bank_00,PPU Status Register
+004213,RDIO_bank_00,IO Port Read Register
+004214,RDDIVL_bank_00,Multiplication Or Divide Result Registers (Low)
+004215,RDDIVH_bank_00,Multiplication Or Divide Result Registers (High)
+004216,RDMPYL_bank_00,Multiplication Or Divide Result Registers (Low)
+004217,RDMPYH_bank_00,Multiplication Or Divide Result Registers (High)
+004218,JOY1L_bank_00,Controller Port Data Registers (Pad 1 - Low)
+004219,JOY1H_bank_00,Controller Port Data Registers (Pad 1 - High)
+00421A,JOY2L_bank_00,Controller Port Data Registers (Pad 2 - Low)
+00421B,JOY2H_bank_00,Controller Port Data Registers (Pad 2 - High)
+00421C,JOY3L_bank_00,Controller Port Data Registers (Pad 3 - Low)
+00421D,JOY3H_bank_00,Controller Port Data Registers (Pad 3 - High)
+00421E,JOY4L_bank_00,Controller Port Data Registers (Pad 4 - Low)
+00421F,JOY4H_bank_00,Controller Port Data Registers (Pad 4 - High)
+004300,DMAP0_bank_00,(H)DMA Control
+004301,BBAD0_bank_00,(H)DMA B-Bus Address
+004302,A1T0L_bank_00,DMA A-Bus Address / HDMA Table Address (Low)
+004303,A1T0H_bank_00,DMA A-Bus Address / HDMA Table Address (High)
+004304,A1B0_bank_00,DMA A-Bus Address / HDMA Table Address (Bank)
+004305,DAS0L_bank_00,DMA Size / HDMA Indirect Address (Low)
+004306,DAS0H_bank_00,DMA Size / HDMA Indirect Address (High)
+004307,DAS0B_bank_00,HDMA Indirect Address (Bank)
+004308,A2A0L_bank_00,HDMA Mid Frame Table Address (Low)
+004309,A2A0H_bank_00,HDMA Mid Frame Table Address (High)
+00430A,NTLR0_bank_00,HDMA Line Counter
+004310,DMAP1_bank_00,(H)DMA Control
+004311,BBAD1_bank_00,(H)DMA B-Bus Address
+004312,A1T1L_bank_00,DMA A-Bus Address / HDMA Table Address (Low)
+004313,A1T1H_bank_00,DMA A-Bus Address / HDMA Table Address (High)
+004314,A1B1_bank_00,DMA A-Bus Address / HDMA Table Address (Bank)
+004315,DAS1L_bank_00,DMA Size / HDMA Indirect Address (Low)
+004316,DAS1H_bank_00,DMA Size / HDMA Indirect Address (High)
+004317,DAS1B_bank_00,HDMA Indirect Address (Bank)
+004318,A2A1L_bank_00,HDMA Mid Frame Table Address (Low)
+004319,A2A1H_bank_00,HDMA Mid Frame Table Address (High)
+00431A,NTLR1_bank_00,HDMA Line Counter
+004320,DMAP2_bank_00,(H)DMA Control
+004321,BBAD2_bank_00,(H)DMA B-Bus Address
+004322,A1T2L_bank_00,DMA A-Bus Address / HDMA Table Address (Low)
+004323,A1T2H_bank_00,DMA A-Bus Address / HDMA Table Address (High)
+004324,A1B2_bank_00,DMA A-Bus Address / HDMA Table Address (Bank)
+004325,DAS2L_bank_00,DMA Size / HDMA Indirect Address (Low)
+004326,DAS2H_bank_00,DMA Size / HDMA Indirect Address (High)
+004327,DAS2B_bank_00,HDMA Indirect Address (Bank)
+004328,A2A2L_bank_00,HDMA Mid Frame Table Address (Low)
+004329,A2A2H_bank_00,HDMA Mid Frame Table Address (High)
+00432A,NTLR2_bank_00,HDMA Line Counter
+004330,DMAP3_bank_00,(H)DMA Control
+004331,BBAD3_bank_00,(H)DMA B-Bus Address
+004332,A1T3L_bank_00,DMA A-Bus Address / HDMA Table Address (Low)
+004333,A1T3H_bank_00,DMA A-Bus Address / HDMA Table Address (High)
+004334,A1B3_bank_00,DMA A-Bus Address / HDMA Table Address (Bank)
+004335,DAS3L_bank_00,DMA Size / HDMA Indirect Address (Low)
+004336,DAS3H_bank_00,DMA Size / HDMA Indirect Address (High)
+004337,DAS3B_bank_00,HDMA Indirect Address (Bank)
+004338,A2A3L_bank_00,HDMA Mid Frame Table Address (Low)
+004339,A2A3H_bank_00,HDMA Mid Frame Table Address (High)
+00433A,NTLR3_bank_00,HDMA Line Counter
+004340,DMAP4_bank_00,(H)DMA Control
+004341,BBAD4_bank_00,(H)DMA B-Bus Address
+004342,A1T4L_bank_00,DMA A-Bus Address / HDMA Table Address (Low)
+004343,A1T4H_bank_00,DMA A-Bus Address / HDMA Table Address (High)
+004344,A1B4_bank_00,DMA A-Bus Address / HDMA Table Address (Bank)
+004345,DAS4L_bank_00,DMA Size / HDMA Indirect Address (Low)
+004346,DAS4H_bank_00,DMA Size / HDMA Indirect Address (High)
+004347,DAS4B_bank_00,HDMA Indirect Address (Bank)
+004348,A2A4L_bank_00,HDMA Mid Frame Table Address (Low)
+004349,A2A4H_bank_00,HDMA Mid Frame Table Address (High)
+00434A,NTLR4_bank_00,HDMA Line Counter
+004350,DMAP5_bank_00,(H)DMA Control
+004351,BBAD5_bank_00,(H)DMA B-Bus Address
+004352,A1T5L_bank_00,DMA A-Bus Address / HDMA Table Address (Low)
+004353,A1T5H_bank_00,DMA A-Bus Address / HDMA Table Address (High)
+004354,A1B5_bank_00,DMA A-Bus Address / HDMA Table Address (Bank)
+004355,DAS5L_bank_00,DMA Size / HDMA Indirect Address (Low)
+004356,DAS5H_bank_00,DMA Size / HDMA Indirect Address (High)
+004357,DAS5B_bank_00,HDMA Indirect Address (Bank)
+004358,A2A5L_bank_00,HDMA Mid Frame Table Address (Low)
+004359,A2A5H_bank_00,HDMA Mid Frame Table Address (High)
+00435A,NTLR5_bank_00,HDMA Line Counter
+004360,DMAP6_bank_00,(H)DMA Control
+004361,BBAD6_bank_00,(H)DMA B-Bus Address
+004362,A1T6L_bank_00,DMA A-Bus Address / HDMA Table Address (Low)
+004363,A1T6H_bank_00,DMA A-Bus Address / HDMA Table Address (High)
+004364,A1B6_bank_00,DMA A-Bus Address / HDMA Table Address (Bank)
+004365,DAS6L_bank_00,DMA Size / HDMA Indirect Address (Low)
+004366,DAS6H_bank_00,DMA Size / HDMA Indirect Address (High)
+004367,DAS6B_bank_00,HDMA Indirect Address (Bank)
+004368,A2A6L_bank_00,HDMA Mid Frame Table Address (Low)
+004369,A2A6H_bank_00,HDMA Mid Frame Table Address (High)
+00436A,NTLR6_bank_00,HDMA Line Counter
+004370,DMAP7_bank_00,(H)DMA Control
+004371,BBAD7_bank_00,(H)DMA B-Bus Address
+004372,A1T7L_bank_00,DMA A-Bus Address / HDMA Table Address (Low)
+004373,A1T7H_bank_00,DMA A-Bus Address / HDMA Table Address (High)
+004374,A1B7_bank_00,DMA A-Bus Address / HDMA Table Address (Bank)
+004375,DAS7L_bank_00,DMA Size / HDMA Indirect Address (Low)
+004376,DAS7H_bank_00,DMA Size / HDMA Indirect Address (High)
+004377,DAS7B_bank_00,HDMA Indirect Address (Bank)
+004378,A2A7L_bank_00,HDMA Mid Frame Table Address (Low)
+004379,A2A7H_bank_00,HDMA Mid Frame Table Address (High)
+00437A,NTLR7_bank_00,HDMA Line Counter
+808000,TEXT_ASCII_string_808000,
+808131,call_819462_or_sub_pointed_to_in_4B_808131,
+808142,RTS_808142,
+808143,call_sub_pointed_to_in_51_808143,
+808150,RTS_808150,
+808151,use_A_to_load_subrout_ptr_into_4B_808151,
+808171,LIST_ptrs_808171,
+8081DE,check_for_doing_DMA_to_CGRAM_8081DE,
+808202,check_for_doing_DMA_to_CGRAM_808202,
+808229,check_for_DMA_7E2000_to_VRAM_808229,
+808255,check_for_DMA_7E3000_to_VRAM_808255,
+80827B,check_for_DMA_7E2800_to_VRAM_80827B,
+80829A,check_for_DMA_7E5800_to_VRAM_80829A,
+8082C6,check_for_DMA_of_tilemap_in_bank_83_into_VRAM_8082C6,
+8082F1,RTS_8082F1,
+8082F2,LIST_ptrs_to_tilemap_data_8082F2,
+808336,PLP_RTS_808336,
+808449,RTS_808449,
+808472,LIST_ptrs_to_subs_808472,
+808482,SUB_808482,
+80849A,RTS_80849A,
+80849B,SUB_80849B,
+8084BA,SUB_8084BA,
+8084BF,RTS_8084BF,
+8084C0,RTS_8084C0,
+8084C1,RTS_8084C1,
+8084D3,LIST_ptrs_to_subs_8084D3,
+8084DB,SUB_8084DB,
+808502,SUB_808502,
+808512,SUB_808512,
+80852C,SUB_80852C,
+80853C,copy_ASCII_string_at_ROM_start_to_SRAM_80853C,
+8085BB,fill_in_OAM_data_8085BB,
+808791,check_7E6A00_sprite_set_00_808791,
+8087CC,check_7E6A12_sprite_set_01_8087CC,
+808807,check_7E6A24_sprite_set_02_808807,
+808842,check_7E6A36_sprite_set_03_808842,
+80887D,check_7E6A48_sprite_set_04_80887D,
+8088B8,check_7E6A5A_sprite_set_05_8088B8,
+8088F3,check_7E6A6C_sprite_set_06_8088F3,
+80892E,check_7E6A7E_sprite_set_07_80892E,
+808969,check_7E6A90_sprite_set_08_808969,
+8089A4,check_7E6AA2_sprite_set_09_8089A4,
+8089DF,check_7E6AB4_sprite_set_0A_8089DF,
+808A1A,check_7E6AC6_sprite_set_0B_808A1A,
+808A55,check_7E6AD8_sprite_set_0C_808A55,
+808A90,check_7E6AEA_sprite_set_0D_808A90,
+808ACB,check_7E6AFC_sprite_set_0E_808ACB,
+808B06,check_7E6B0E_sprite_set_0F_808B06,
+808B41,check_7E6B20_sprite_set_10_808B41,
+808B7C,check_7E6B32_sprite_set_11_808B7C,
+808BB7,check_7E6B44_sprite_set_12_808BB7,
+808BF2,check_7E6B56_sprite_set_13_808BF2,
+808C2D,check_7E6B68_sprite_set_14_808C2D,
+808C68,check_7E6B7A_sprite_set_15_808C68,
+808CA3,check_7E6B8C_sprite_set_16_808CA3,
+808CDE,check_7E6B9E_sprite_set_17_808CDE,
+808D19,check_7E6BB0_sprite_set_18_808D19,
+808D54,check_7E6BC2_sprite_set_19_808D54,
+808D8F,check_7E6BD4_sprite_set_1A_808D8F,
+808DCA,check_7E6BE6_sprite_set_1B_808DCA,
+808E05,check_7E6BF8_sprite_set_1C_808E05,
+808E40,check_7E6C0A_sprite_set_1D_808E40,
+808E7B,check_7E6C1C_sprite_set_1E_808E7B,
+808EB6,check_7E6C2E_sprite_set_1F_808EB6,
+808EF1,check_7E6C40_sprite_set_20_808EF1,
+808F2C,check_7E6C52_sprite_set_21_808F2C,
+808F67,check_7E6C64_sprite_set_22_808F67,
+808FA2,check_7E6C76_sprite_set_23_808FA2,
+808FDD,check_7E6C88_sprite_set_24_808FDD,
+809018,check_7E6C9A_sprite_set_25_809018,
+809053,check_7E6CAC_sprite_set_26_809053,
+80908E,check_7E6CBE_sprite_set_27_80908E,
+8090C9,check_7E6CD0_sprite_set_28_8090C9,
+809104,check_7E6CE2_sprite_set_29_809104,
+80913F,check_7E6CF4_sprite_set_2A_80913F,
+80917A,check_7E6D06_sprite_set_2B_80917A,
+8091B5,check_7E6D18_sprite_set_2C_8091B5,
+8091F0,check_7E6D2A_sprite_set_2D_8091F0,
+80922B,check_7E6D3C_sprite_set_2E_80922B,
+809266,check_7E6D4E_sprite_set_2F_809266,
+8092A1,check_7E6D60_sprite_set_30_8092A1,
+8092DC,check_7E6D72_sprite_set_31_8092DC,
+809317,check_7E6D84_sprite_set_32_809317,
+809352,check_7E6D96_sprite_set_33_809352,
+80938D,check_7E6DA8_sprite_set_34_80938D,
+8093C8,check_7E6DBA_sprite_set_35_8093C8,
+809403,check_7E6DCC_sprite_set_36_809403,
+80943E,check_7E6DDE_sprite_set_37_80943E,
+809479,check_7E6DF0_sprite_set_38_809479,
+8094B4,check_7E6E02_sprite_set_39_8094B4,
+8094EF,check_7E6E14_sprite_set_3A_8094EF,
+80952A,check_7E6E26_sprite_set_3B_80952A,
+809565,check_7E6E38_sprite_set_3C_809565,
+8095A0,check_7E6E4A_sprite_set_3D_8095A0,
+8095DB,check_7E6E5C_sprite_set_3E_8095DB,
+809616,check_7E6E6E_sprite_set_3F_809616,
+809651,check_7E6E80_sprite_set_40_809651,
+80968C,check_7E6E92_sprite_set_41_80968C,
+8096C7,check_7E6EA4_sprite_set_42_8096C7,
+809702,check_7E6EB6_sprite_set_43_809702,
+80973D,check_7E6EC8_sprite_set_44_80973D,
+809778,check_7E6EDA_sprite_set_45_809778,
+8097B3,check_7E6EEC_sprite_set_46_8097B3,
+8097EE,check_7E6EFE_sprite_set_47_8097EE,
+809829,check_7E6F10_sprite_set_48_809829,
+809864,check_7E6F22_sprite_set_49_809864,
+80989F,check_7E6F34_sprite_set_4A_80989F,
+8098DA,check_7E6F46_sprite_set_4B_8098DA,
+809915,check_7E6F58_sprite_set_4C_809915,
+809950,check_7E6F6A_sprite_set_4D_809950,
+80998B,check_7E6F7C_sprite_set_4E_80998B,
+8099C6,check_7E6F8E_sprite_set_4F_8099C6,
+809A01,check_7E6FA0_sprite_set_50_809A01,
+809A3C,check_7E6FB2_sprite_set_51_809A3C,
+809A77,check_7E6FC4_sprite_set_52_809A77,
+809AB2,check_7E6FD6_sprite_set_53_809AB2,
+809AED,check_7E6FE8_sprite_set_54_809AED,
+809B28,check_7E6FFA_sprite_set_55_809B28,
+809B63,check_7E700C_sprite_set_56_809B63,
+809B9E,check_7E701E_sprite_set_57_809B9E,
+809BD9,check_7E7030_sprite_set_58_809BD9,
+809C14,check_7E7042_sprite_set_59_809C14,
+809C4F,check_7E7054_sprite_set_5A_809C4F,
+809C8A,check_7E7066_sprite_set_5B_809C8A,
+809CC5,check_7E7078_sprite_set_5C_809CC5,
+809D00,check_7E708A_sprite_set_5D_809D00,
+809D3B,check_7E709C_sprite_set_5E_809D3B,
+809D76,check_7E70AE_sprite_set_5F_809D76,
+809DB1,check_7E70C0_sprite_set_60_809DB1,
+809DEC,check_7E70D2_sprite_set_61_809DEC,
+809E27,check_7E70E4_sprite_set_62_809E27,
+809E62,check_7E70F6_sprite_set_63_809E62,
+809E9D,check_7E7108_sprite_set_64_809E9D,
+809ED8,check_7E711A_sprite_set_65_809ED8,
+809F13,check_7E712C_sprite_set_66_809F13,
+809F4E,check_7E713E_sprite_set_67_809F4E,
+809F89,check_7E7150_sprite_set_68_809F89,
+809FC4,check_7E7162_sprite_set_69_809FC4,
+809FFF,check_7E7174_sprite_set_6A_809FFF,
+80A03A,check_7E7186_sprite_set_6B_80A03A,
+80A075,check_7E7198_sprite_set_6C_80A075,
+80A0B0,check_7E71AA_sprite_set_6D_80A0B0,
+80A0EB,check_7E71BC_sprite_set_6E_80A0EB,
+80A126,check_7E71CE_sprite_set_6F_80A126,
+80A161,check_7E71E0_sprite_set_70_80A161,
+80A19C,check_7E71F2_sprite_set_71_80A19C,
+80A1D7,check_7E7204_sprite_set_72_80A1D7,
+80A212,check_7E7216_sprite_set_73_80A212,
+80A24D,check_7E7228_sprite_set_74_80A24D,
+80A288,check_7E723A_sprite_set_75_80A288,
+80A2C3,check_7E724C_sprite_set_76_80A2C3,
+80A2FE,check_7E725E_sprite_set_77_80A2FE,
+80A339,check_7E7270_sprite_set_78_80A339,
+80A374,check_7E7282_sprite_set_79_80A374,
+80A3AF,check_7E7294_sprite_set_7A_80A3AF,
+80A3EA,check_7E72A6_sprite_set_7B_80A3EA,
+80A425,check_7E72B8_sprite_set_7C_80A425,
+80A460,check_7E72CA_sprite_set_7D_80A460,
+80A49B,check_7E72DC_sprite_set_7E_80A49B,
+80A4D6,check_7E72EE_sprite_set_7F_80A4D6,
+80A511,plb_plp_RTL_80A511,
+80A514,fill_in_OAM_data_for_sprite_set_80A514,
+80A56E,LIST_bitmasks_clear_sprite_extra_OAM_bits_80A56E,
+80A57E,LIST_bitmasks_set_large_sprite_80A57E,
+80A58E,SUB_80A58E,
+80AE59,plp_RTL_80AE59,
+80B642,plp_RTL_80B642,
+80FFE4,Native_COP,
+80FFE6,Native_BRK,
+80FFEA,Native_NMI,
+80FFF4,Native_IRQ,
+80FFFE,Emulation_RESET,
+8100A9,gfx_data_size,
+8100AB,num_bits_left,
+8100AC,gfx_bit_flags,
+812100,INIDISP_bank_81,Screen Display Register
+812101,OBSEL_bank_81,Object Size and Character Size Register
+812102,OAMADDL_bank_81,OAM Address Registers (Low)
+812103,OAMADDH_bank_81,OAM Address Registers (High)
+812104,OAMDATA_bank_81,OAM Data Write Register
+812105,BGMODE_bank_81,BG Mode and Character Size Register
+812106,MOSAIC_bank_81,Mosaic Register
+812107,BG1SC_bank_81,BG Tilemap Address Registers (BG1)
+812108,BG2SC_bank_81,BG Tilemap Address Registers (BG2)
+812109,BG3SC_bank_81,BG Tilemap Address Registers (BG3)
+81210A,BG4SC_bank_81,BG Tilemap Address Registers (BG4)
+81210B,BG12NBA_bank_81,BG Character Address Registers (BG1&2)
+81210C,BG34NBA_bank_81,BG Character Address Registers (BG3&4)
+81210D,BG1HOFS_bank_81,BG Scroll Registers (BG1)
+81210E,BG1VOFS_bank_81,BG Scroll Registers (BG1)
+81210F,BG2HOFS_bank_81,BG Scroll Registers (BG2)
+812110,BG2VOFS_bank_81,BG Scroll Registers (BG2)
+812111,BG3HOFS_bank_81,BG Scroll Registers (BG3)
+812112,BG3VOFS_bank_81,BG Scroll Registers (BG3)
+812113,BG4HOFS_bank_81,BG Scroll Registers (BG4)
+812114,BG4VOFS_bank_81,BG Scroll Registers (BG4)
+812115,VMAIN_bank_81,Video Port Control Register
+812116,VMADDL_bank_81,VRAM Address Registers (Low)
+812117,VMADDH_bank_81,VRAM Address Registers (High)
+812118,VMDATAL_bank_81,VRAM Data Write Registers (Low)
+812119,VMDATAH_bank_81,VRAM Data Write Registers (High)
+81211A,M7SEL_bank_81,Mode 7 Settings Register
+81211B,M7A_bank_81,Mode 7 Matrix Registers
+81211C,M7B_bank_81,Mode 7 Matrix Registers
+81211D,M7C_bank_81,Mode 7 Matrix Registers
+81211E,M7D_bank_81,Mode 7 Matrix Registers
+81211F,M7X_bank_81,Mode 7 Matrix Registers
+812120,M7Y_bank_81,Mode 7 Matrix Registers
+812121,CGADD_bank_81,CGRAM Address Register
+812122,CGDATA_bank_81,CGRAM Data Write Register
+812123,W12SEL_bank_81,Window Mask Settings Registers
+812124,W34SEL_bank_81,Window Mask Settings Registers
+812125,WOBJSEL_bank_81,Window Mask Settings Registers
+812126,WH0_bank_81,Window Position Registers (WH0)
+812127,WH1_bank_81,Window Position Registers (WH1)
+812128,WH2_bank_81,Window Position Registers (WH2)
+812129,WH3_bank_81,Window Position Registers (WH3)
+81212A,WBGLOG_bank_81,Window Mask Logic registers (BG)
+81212B,WOBJLOG_bank_81,Window Mask Logic registers (OBJ)
+81212C,TM_bank_81,Screen Destination Registers
+81212D,TS_bank_81,Screen Destination Registers
+81212E,TMW_bank_81,Window Mask Destination Registers
+81212F,TSW_bank_81,Window Mask Destination Registers
+812130,CGWSEL_bank_81,Color Math Registers
+812131,CGADSUB_bank_81,Color Math Registers
+812132,COLDATA_bank_81,Color Math Registers
+812133,SETINI_bank_81,Screen Mode Select Register
+812134,MPYL_bank_81,Multiplication Result Registers
+812135,MPYM_bank_81,Multiplication Result Registers
+812136,MPYH_bank_81,Multiplication Result Registers
+812137,SLHV_bank_81,Software Latch Register
+812138,OAMDATAREAD_bank_81,OAM Data Read Register
+812139,VMDATALREAD_bank_81,VRAM Data Read Register (Low)
+81213A,VMDATAHREAD_bank_81,VRAM Data Read Register (High)
+81213B,CGDATAREAD_bank_81,CGRAM Data Read Register
+81213C,OPHCT_bank_81,Scanline Location Registers (Horizontal)
+81213D,OPVCT_bank_81,Scanline Location Registers (Vertical)
+81213E,STAT77_bank_81,PPU Status Register
+81213F,STAT78_bank_81,PPU Status Register
+812140,APUIO0_bank_81,APU IO Registers
+812141,APUIO1_bank_81,APU IO Registers
+812142,APUIO2_bank_81,APU IO Registers
+812143,APUIO3_bank_81,APU IO Registers
+812180,WMDATA_bank_81,WRAM Data Register
+812181,WMADDL_bank_81,WRAM Address Registers
+812182,WMADDM_bank_81,WRAM Address Registers
+812183,WMADDH_bank_81,WRAM Address Registers
+814016,JOYSER0_bank_81,Old Style Joypad Registers
+814017,JOYSER1_bank_81,Old Style Joypad Registers
+814200,NMITIMEN_bank_81,Interrupt Enable Register
+814201,WRIO_bank_81,IO Port Write Register
+814202,WRMPYA_bank_81,Multiplicand Registers
+814203,WRMPYB_bank_81,Multiplicand Registers
+814204,WRDIVL_bank_81,Divisor & Dividend Registers
+814205,WRDIVH_bank_81,Divisor & Dividend Registers
+814206,WRDIVB_bank_81,Divisor & Dividend Registers
+814207,HTIMEL_bank_81,IRQ Timer Registers (Horizontal - Low)
+814208,HTIMEH_bank_81,IRQ Timer Registers (Horizontal - High)
+814209,VTIMEL_bank_81,IRQ Timer Registers (Vertical - Low)
+81420A,VTIMEH_bank_81,IRQ Timer Registers (Vertical - High)
+81420B,MDMAEN_bank_81,DMA Enable Register
+81420C,HDMAEN_bank_81,HDMA Enable Register
+81420D,MEMSEL_bank_81,ROM Speed Register
+814210,RDNMI_bank_81,Interrupt Flag Registers
+814211,TIMEUP_bank_81,Interrupt Flag Registers
+814212,HVBJOY_bank_81,PPU Status Register
+814213,RDIO_bank_81,IO Port Read Register
+814214,RDDIVL_bank_81,Multiplication Or Divide Result Registers (Low)
+814215,RDDIVH_bank_81,Multiplication Or Divide Result Registers (High)
+814216,RDMPYL_bank_81,Multiplication Or Divide Result Registers (Low)
+814217,RDMPYH_bank_81,Multiplication Or Divide Result Registers (High)
+814218,JOY1L_bank_81,Controller Port Data Registers (Pad 1 - Low)
+814219,JOY1H_bank_81,Controller Port Data Registers (Pad 1 - High)
+81421A,JOY2L_bank_81,Controller Port Data Registers (Pad 2 - Low)
+81421B,JOY2H_bank_81,Controller Port Data Registers (Pad 2 - High)
+81421C,JOY3L_bank_81,Controller Port Data Registers (Pad 3 - Low)
+81421D,JOY3H_bank_81,Controller Port Data Registers (Pad 3 - High)
+81421E,JOY4L_bank_81,Controller Port Data Registers (Pad 4 - Low)
+81421F,JOY4H_bank_81,Controller Port Data Registers (Pad 4 - High)
+814300,DMAP0_bank_81,(H)DMA Control
+814301,BBAD0_bank_81,(H)DMA B-Bus Address
+814302,A1T0L_bank_81,DMA A-Bus Address / HDMA Table Address (Low)
+814303,A1T0H_bank_81,DMA A-Bus Address / HDMA Table Address (High)
+814304,A1B0_bank_81,DMA A-Bus Address / HDMA Table Address (Bank)
+814305,DAS0L_bank_81,DMA Size / HDMA Indirect Address (Low)
+814306,DAS0H_bank_81,DMA Size / HDMA Indirect Address (High)
+814307,DAS0B_bank_81,HDMA Indirect Address (Bank)
+814308,A2A0L_bank_81,HDMA Mid Frame Table Address (Low)
+814309,A2A0H_bank_81,HDMA Mid Frame Table Address (High)
+81430A,NTLR0_bank_81,HDMA Line Counter
+814310,DMAP1_bank_81,(H)DMA Control
+814311,BBAD1_bank_81,(H)DMA B-Bus Address
+814312,A1T1L_bank_81,DMA A-Bus Address / HDMA Table Address (Low)
+814313,A1T1H_bank_81,DMA A-Bus Address / HDMA Table Address (High)
+814314,A1B1_bank_81,DMA A-Bus Address / HDMA Table Address (Bank)
+814315,DAS1L_bank_81,DMA Size / HDMA Indirect Address (Low)
+814316,DAS1H_bank_81,DMA Size / HDMA Indirect Address (High)
+814317,DAS1B_bank_81,HDMA Indirect Address (Bank)
+814318,A2A1L_bank_81,HDMA Mid Frame Table Address (Low)
+814319,A2A1H_bank_81,HDMA Mid Frame Table Address (High)
+81431A,NTLR1_bank_81,HDMA Line Counter
+814320,DMAP2_bank_81,(H)DMA Control
+814321,BBAD2_bank_81,(H)DMA B-Bus Address
+814322,A1T2L_bank_81,DMA A-Bus Address / HDMA Table Address (Low)
+814323,A1T2H_bank_81,DMA A-Bus Address / HDMA Table Address (High)
+814324,A1B2_bank_81,DMA A-Bus Address / HDMA Table Address (Bank)
+814325,DAS2L_bank_81,DMA Size / HDMA Indirect Address (Low)
+814326,DAS2H_bank_81,DMA Size / HDMA Indirect Address (High)
+814327,DAS2B_bank_81,HDMA Indirect Address (Bank)
+814328,A2A2L_bank_81,HDMA Mid Frame Table Address (Low)
+814329,A2A2H_bank_81,HDMA Mid Frame Table Address (High)
+81432A,NTLR2_bank_81,HDMA Line Counter
+814330,DMAP3_bank_81,(H)DMA Control
+814331,BBAD3_bank_81,(H)DMA B-Bus Address
+814332,A1T3L_bank_81,DMA A-Bus Address / HDMA Table Address (Low)
+814333,A1T3H_bank_81,DMA A-Bus Address / HDMA Table Address (High)
+814334,A1B3_bank_81,DMA A-Bus Address / HDMA Table Address (Bank)
+814335,DAS3L_bank_81,DMA Size / HDMA Indirect Address (Low)
+814336,DAS3H_bank_81,DMA Size / HDMA Indirect Address (High)
+814337,DAS3B_bank_81,HDMA Indirect Address (Bank)
+814338,A2A3L_bank_81,HDMA Mid Frame Table Address (Low)
+814339,A2A3H_bank_81,HDMA Mid Frame Table Address (High)
+81433A,NTLR3_bank_81,HDMA Line Counter
+814340,DMAP4_bank_81,(H)DMA Control
+814341,BBAD4_bank_81,(H)DMA B-Bus Address
+814342,A1T4L_bank_81,DMA A-Bus Address / HDMA Table Address (Low)
+814343,A1T4H_bank_81,DMA A-Bus Address / HDMA Table Address (High)
+814344,A1B4_bank_81,DMA A-Bus Address / HDMA Table Address (Bank)
+814345,DAS4L_bank_81,DMA Size / HDMA Indirect Address (Low)
+814346,DAS4H_bank_81,DMA Size / HDMA Indirect Address (High)
+814347,DAS4B_bank_81,HDMA Indirect Address (Bank)
+814348,A2A4L_bank_81,HDMA Mid Frame Table Address (Low)
+814349,A2A4H_bank_81,HDMA Mid Frame Table Address (High)
+81434A,NTLR4_bank_81,HDMA Line Counter
+814350,DMAP5_bank_81,(H)DMA Control
+814351,BBAD5_bank_81,(H)DMA B-Bus Address
+814352,A1T5L_bank_81,DMA A-Bus Address / HDMA Table Address (Low)
+814353,A1T5H_bank_81,DMA A-Bus Address / HDMA Table Address (High)
+814354,A1B5_bank_81,DMA A-Bus Address / HDMA Table Address (Bank)
+814355,DAS5L_bank_81,DMA Size / HDMA Indirect Address (Low)
+814356,DAS5H_bank_81,DMA Size / HDMA Indirect Address (High)
+814357,DAS5B_bank_81,HDMA Indirect Address (Bank)
+814358,A2A5L_bank_81,HDMA Mid Frame Table Address (Low)
+814359,A2A5H_bank_81,HDMA Mid Frame Table Address (High)
+81435A,NTLR5_bank_81,HDMA Line Counter
+814360,DMAP6_bank_81,(H)DMA Control
+814361,BBAD6_bank_81,(H)DMA B-Bus Address
+814362,A1T6L_bank_81,DMA A-Bus Address / HDMA Table Address (Low)
+814363,A1T6H_bank_81,DMA A-Bus Address / HDMA Table Address (High)
+814364,A1B6_bank_81,DMA A-Bus Address / HDMA Table Address (Bank)
+814365,DAS6L_bank_81,DMA Size / HDMA Indirect Address (Low)
+814366,DAS6H_bank_81,DMA Size / HDMA Indirect Address (High)
+814367,DAS6B_bank_81,HDMA Indirect Address (Bank)
+814368,A2A6L_bank_81,HDMA Mid Frame Table Address (Low)
+814369,A2A6H_bank_81,HDMA Mid Frame Table Address (High)
+81436A,NTLR6_bank_81,HDMA Line Counter
+814370,DMAP7_bank_81,(H)DMA Control
+814371,BBAD7_bank_81,(H)DMA B-Bus Address
+814372,A1T7L_bank_81,DMA A-Bus Address / HDMA Table Address (Low)
+814373,A1T7H_bank_81,DMA A-Bus Address / HDMA Table Address (High)
+814374,A1B7_bank_81,DMA A-Bus Address / HDMA Table Address (Bank)
+814375,DAS7L_bank_81,DMA Size / HDMA Indirect Address (Low)
+814376,DAS7H_bank_81,DMA Size / HDMA Indirect Address (High)
+814377,DAS7B_bank_81,HDMA Indirect Address (Bank)
+814378,A2A7L_bank_81,HDMA Mid Frame Table Address (Low)
+814379,A2A7H_bank_81,HDMA Mid Frame Table Address (High)
+81437A,NTLR7_bank_81,HDMA Line Counter
+818000,call_subroutine_from_table_at_81800D_818000,
+81800D,LIST_sub_ptrs_81800D,
+818023,SUB_818023,
+818134,SUB_818134,
+818170,SUB_818170,
+8181AB,SUB_8181AB,
+8181E6,SUB_8181E6,
+818222,SUB_818222,
+81825D,SUB_81825D,
+818298,SUB_818298,
+8182D7,SUB_8182D7,
+818312,SUB_818312,
+81834D,SUB_81834D,
+818B15,set_up_DMA_for_colors_to_CGRAM,
+818C0C,LOOP_load_gfx_for_each_ID_in_list,
+818C29,get_palettes,
+818C37,LOOP_copy_colors_into_bank_00_RAM,
+818C4F,case_copied_all_colors_818C4F,
+818C73,RTL_818C73,
+818C74,LIST_offsets_for_gfx_ID_lists_818C74,
+818CB2,LISTS_of_gfx_IDs_818CB2,
+818D62,LIST_offsets_for_palette_metadata,
+818DA0,LIST_which_0x10_colors_to_copy,
+818DA1,LIST_where_in_bank_00_to_copy,
+818F74,DATA_818F74,
+818F93,LIST_subroutine_targets_818F93,
+818FF0,SUB_load_graphics_818FF0,
+819028,copy_decomp_to_ptr_from_struct,
+819048,check_if_should_DMA_data,
+819070,restore_state_RTS_819070,
+819075,GFX_struct_ID_num_byte_00,
+819076,GFX_should_copy_to_next_ptr_byte_01,
+819077,GFX_struct_ptr_bytes_02_to_04,
+81907A,GFX_should_DMA_to_VRAM_addr_byte_05,
+81907B,GFX_VRAM_addr_bytes_06_to_07,
+8193E1,clear_color_buffer_in_1BE0_WRAM,
+819417,MVN_palettes_from_bank_84_to_bank_00_RAM,
+81944A,SUB_81944A,
+819523,SUB_819523,
+81960F,read_from_ptr_table_and_print_text,
+819635,calc_position_in_ptr_table,
+81963B,read_ptr_to_text_from_table,
+819647,set_text_pos_to_left_edge_of_box,
+81964A,LOOP_read_text_val,
+819653,text_value_general_case,
+819659,go_to_next_char,
+81965F,got_space_char,
+819665,got_ctrl_code,
+819671,LIST_ctrl_code_subroutine_offsets,
+8196E5,LINE_00,
+8196F0,NEXT_BOX_01,
+8196FB,END_STRING_02,
+819706,CTRL_CODE_03,
+81970F,CTRL_CODE_04,
+819718,CTRL_CODE_05,
+819721,CTRL_CODE_06,
+81972A,CTRL_CODE_07,
+819733,CTRL_CODE_08,
+81973C,CTRL_CODE_09,
+819745,CTRL_CODE_0A,
+81974E,CTRL_CODE_0B,
+819757,CTRL_CODE_0C,
+819760,CTRL_CODE_0D,
+819769,CTRL_CODE_0E,
+819772,CTRL_CODE_0F,
+819790,LOOP_read_text_819790,
+81979F,advance_to_next_char_81979F,
+8197A5,case_got_ctrl_code_8197A5,
+8197AC,case_got_space_8197AC,
+8197B2,CTRL_CODE_10,
+8197BB,CTRL_CODE_20,
+8197C5,CTRL_CODE_21,
+8197CF,CTRL_CODE_22,
+8197DC,CTRL_CODE_23,
+8197E9,CTRL_CODE_24,
+8197F3,CTRL_CODE_25,
+8197FD,CTRL_CODE_26,
+819807,CTRL_CODE_27,
+819811,CTRL_CODE_28,
+81981A,CTRL_CODE_29,
+819823,CTRL_CODE_2A,
+81982C,CTRL_CODE_2B,
+819836,CTRL_CODE_2C,
+819840,CTRL_CODE_2D,
+81984A,CTRL_CODE_2E,
+819853,CTRL_CODE_2F,
+81985C,CTRL_CODE_30,
+819865,CTRL_CODE_31,
+81986E,CTRL_CODE_32,
+819877,CTRL_CODE_33,
+819880,CTRL_CODE_34,
+819889,CTRL_CODE_35,
+819892,CTRL_CODE_36,
+81989B,CTRL_CODE_37,
+8198A4,CTRL_CODE_38,
+8198AD,CTRL_CODE_39,
+8198B6,print_right_aligned_2_digit_decimal_value,
+8198CB,print_last_decimal_digit_8198CB,
+8198CF,print_decimal_digit_8198CF,
+8198D9,case_1_digit_value_go_two_tiles_right,
+8198DF,SUB_8198DF,
+819929,print_4_BCD_digits_align_right_819929,
+819958,print_3_BCD_digits_align_right_819958,
+819976,print_BCD_digit_if_nonzero_819976,
+81997D,print_last_BCD_digit_81997D,
+81998F,CODE_go_two_tiles_right,
+819994,print_4_decimal_digits_no_align_right,
+8199C3,print_BCD_digit_if_nonzero_8199C3,
+8199CA,print_last_BCD_digit_do_not_align_right,
+8199DB,RTS_8199DB,
+8199DC,SUB_8199DC,
+819A02,fill_in_4_tiles_for_char_819A02,
+819A23,LIST_digit_encodings_with_hi_priority_palette_0_819A23,
+819A37,get_BCD_representation_of_input,
+819A41,LOOP_construct_BCD_representation,
+819A58,get_BCD_value_and_RTL,
+819A5C,LIST_BCD_values_for_powers_of_2,
+819ADD,PTR_LIST_819ADD,
+819BCA,SUB_819BCA,
+819BD7,SUB_819BD7,
+819BFC,SUB_819BFC,
+819C1F,SUB_819C1F,
+819C58,LIST_multiples_of_0x421_819C58,
+819C78,SUB_819C78,
+819C8F,SUB_819C8F,
+819CB1,SUB_819CB1,
+819CE1,SUB_819CE1,
+819D20,SUB_819D20,
+819D58,SUB_decompress_gfx_819D58,
+819D6C,loop_819D6C,
+819D7A,lorom_bank_wrap_819D7A,
+819D86,data_copy_done_9d86,
+819D87,set_data_buffer,
+819D8D,check_bit_flag,
+819D91,case_got_1_bit_copy_literal_byte,
+819D9B,lorom_bank_wrap_9d9b,
+819DA7,data_copy_done_9DA7,
+819DA8,write_byte_to_wram,
+819DAE,case_got_0_bit_copy_from_decomp_buffer,
+819DB2,read_1st_byte,
+819DB8,lorom_bank_wrap_9db8,
+819DC4,data_copy_done_9dc4,
+819DC5,read_2nd_byte,
+819DD1,lorom_bank_wrap_9DD1,
+819DDD,data_copy_done_9ddd,
+819DDE,calc_num_bytes_to_go_back,
+819DE6,calc_num_bytes_to_copy,
+819E0C,SUB_819E0C,
+819E2D,plp_RTL_819E2D,
+819E48,DATA_819E48,
+819E4A,DATA_819E4A,
+819F7F,SUB_819F7F,
+819F8E,LIST_subroutine_ptrs_819F8E,
+819FB6,SUB_819FB6,
+819FE8,SUB_819FE8,
+819FED,SUB_819FED,
+819FF7,SUB_819FF7,
+81A037,SUB_81A037,
+81A0A4,LIST_subroutine_ptrs_81A0A4,
+81A0AA,SUB_81A0AA,
+81A0B7,LIST_subroutine_ptrs_81A0B7,
+81A0C1,SUB_81A0C1,
+81A103,SUB_81A103,
+81A15E,SUB_81A15E,
+81A1D3,SUB_81A1D3,
+81A1D6,SUB_81A1D6,
+81A1E5,SUB_81A1E5,
+81A229,SUB_81A229,
+81A238,SUB_81A238,
+81A24C,SUB_81A24C,
+81A30D,SUB_81A30D,
+81A31D,SUB_81A31D,
+81A330,SUB_81A330,
+81A331,SUB_81A331,
+81A332,SUB_81A332,
+81A333,SUB_81A333,
+81A340,SUB_81A340,
+81A341,SUB_81A341,
+81A342,SUB_81A342,
+81A343,SUB_81A343,
+81A344,SUB_81A344,
+81A355,SUB_81A355,
+81A356,SUB_81A356,
+81A357,SUB_81A357,
+81A358,SUB_81A358,
+81A42E,RTS_81A42E,
+81A42F,DATA_81A42F,
+81A443,DATA_81A443,
+81A4E0,RTS_81A4E0,
+81A4E1,SUB_81A4E1,
+81A52D,DATA_81A52D,
+81A58C,DATA_81A58C,
+81A5BB,plp_RTS_81A5BB,
+81A5BD,DATA_81A5BD,
+81A5C9,SUB_81A5C9,
+81A5D8,SUB_81A5D8,
+81A5DB,SUB_81A5DB,
+81A5ED,LIST_subroutine_ptrs_81A5ED,
+81A601,SUB_81A601,
+81A613,LIST_subroutine_ptrs_81A613,
+81A627,SUB_81A627,
+81A639,LIST_subroutine_ptrs_81A639,
+81A64D,SUB_81A64D,
+81A65F,LIST_subroutine_ptrs_81A65F,
+81A673,SUB_81A673,
+81A685,LIST_subroutine_ptrs_81A685,
+81A699,SUB_81A699,
+81A6AB,LIST_subroutine_ptrs_81A6AB,
+81A6BF,SUB_81A6BF,
+81A6D3,SUB_81A6D3,
+81A6EB,SUB_81A6EB,
+81A702,SUB_81A702,
+81A721,SUB_81A721,
+81A746,SUB_81A746,
+81A76B,SUB_81A76B,
+81A790,SUB_81A790,
+81A7B5,SUB_81A7B5,
+81A7DA,SUB_81A7DA,
+81A7FF,SUB_81A7FF,
+81A836,SUB_81A836,
+81A86D,SUB_81A86D,
+81A8A4,SUB_81A8A4,
+81A8DB,SUB_81A8DB,
+81A912,SUB_81A912,
+81A949,SUB_81A949,
+81A965,SUB_81A965,
+81A972,SUB_81A972,
+81A97F,SUB_81A97F,
+81A98C,SUB_81A98C,
+81A999,SUB_81A999,
+81A9A6,SUB_81A9A6,
+81A9B7,SUB_81A9B7,
+81A9DA,CODE_81A9DA,
+81A9EA,RTS_81A9EA,
+81A9EB,SUB_81A9EB,
+81A9F6,SUB_81A9F6,
+81AC40,SUB_81AC40,
+81AC52,SUB_81AC52,
+81AC61,SUB_81AC61,
+81AF25,SUB_81AF25,
+81B068,case_print_undiscovered_tama_description_81B068,
+81B0A2,print_description_for_discovered_tamagotchi_81B0A2,
+81B0D3,write_10s_digit_81B0D3,
+81B0DC,write_1s_digit_81B0DC,
+81B0F7,LIST_digit_encodings_with_high_priority_and_palette_1_81B0F7,
+81B10B,print_tamagotchi_description_from_ptr_table_index_81B10B,
+81B128,set_position_for_start_of_line_81B128,
+81B137,LOOP_read_text_81B137,
+81B140,case_got_general_character_81B140,
+81B146,inc_text_ptr_to_next_char_81B146,
+81B14C,case_got_space_char_81B14C,
+81B152,case_got_ctrl_code_81B152,
+81B15E,LIST_ctrl_code_ptrs_81B15E,
+81B164,case_LINE_or_NEXT_BOX_81B164,
+81B166,case_END_STRING_81B166,
+81B168,fill_in_4_tiles_for_character_81B168,
+81B189,LIST_bank_7E_offsets_for_new_lines_tama_descriptions_81B189,
+81B1B4,LIST_ptrs_81B1B4,
+81B217,DATA_81B217,
+81B2AF,DATA_81B2AF,
+81B347,LIST_ptrs_to_uncomp_gfx_81B347,
+81B444,SUB_81B444,
+81B44A,SUB_81B44A,
+81B450,SUB_81B450,
+81B479,SUB_81B479,
+81B4D4,SUB_81B4D4,
+81B668,SUB_81B668,
+81B838,SUB_81B838,
+81B847,LIST_subroutine_ptrs_81B847,
+81B883,SUB_81B883,
+81B892,SUB_81B892,
+81B8A2,SUB_81B8A2,
+81B8F1,DATA_81B8F1,
+81B969,DATA_81B969,
+81B9E1,DATA_81B9E1,
+81BA59,DATA_81BA59,
+81BAD1,SUB_81BAD1,
+81BC95,SUB_81BC95,
+81BCA2,SUB_81BCA2,
+81BCB4,SUB_81BCB4,
+81BCDB,SUB_81BCDB,
+81BCE5,SUB_81BCE5,
+81BD15,SUB_81BD15,
+81BD1C,SUB_81BD1C,
+81BD32,SUB_81BD32,
+81BD5D,SUB_81BD5D,
+81BD6A,SUB_81BD6A,
+81BD7B,SUB_81BD7B,
+81BD88,SUB_81BD88,
+81BD95,SUB_81BD95,
+81BDF8,DATA_81BDF8,
+81BE0E,SUB_81BE0E,
+81BE3E,SUB_81BE3E,
+81BE45,SUB_81BE45,
+81BE5B,SUB_81BE5B,
+81BE68,SUB_81BE68,
+81BE79,SUB_81BE79,
+81BE7A,SUB_81BE7A,
+81BE7B,SUB_81BE7B,
+81BE7C,SUB_81BE7C,
+81BE7D,SUB_81BE7D,
+81BE95,SUB_81BE95,
+81BEBC,SUB_81BEBC,
+81BEC7,SUB_81BEC7,
+81BEC8,SUB_81BEC8,
+81C2A4,DATA_81C2A4,
+81C2B0,LIST_ptrs_81C2B0,
+81C415,DATA_81C415,
+81C425,DATA_81C425,
+81C435,DATA_81C435,
+81C4A5,SUB_81C4A5,
+81C4B4,LIST_subroutine_ptrs_81C4B4,
+81C4DC,SUB_81C4DC,
+81C4F3,SUB_81C4F3,
+81C500,SUB_81C500,
+81C662,SUB_81C662,
+81C686,SUB_81C686,
+81C68A,SUB_81C68A,
+81C68E,SUB_81C68E,
+81C6D7,DATA_81C6D7,
+81C6E3,SUB_81C6E3,
+81C6EA,SUB_81C6EA,
+81C6F2,SUB_81C6F2,
+81C6F9,SUB_81C6F9,
+81C76F,SUB_81C76F,
+81C7EE,DATA_81C7EE,
+81C7F4,SUB_81C7F4,
+81C816,LIST_subroutine_lists_81C816,
+81C820,SUB_81C820,
+81C838,SUB_81C838,
+81C860,SUB_81C860,
+81C86C,SUB_81C86C,
+81C877,SUB_81C877,
+81C89F,SUB_81C89F,
+81C8AC,SUB_81C8AC,
+81C8BC,RTS_81C8BC,
+81C8BD,RTS_81C8BD,
+81C8EA,LIST_triangular_numbers_81C8EA,
+81CA6D,DATA_81CA6D,
+81CA7B,DATA_81CA7B,
+81CA89,DATA_81CA89,
+81CA97,DATA_81CA97,
+81CAAF,DATA_81CAAF,
+81CB1B,DATA_81CB1B,
+81CBF6,DATA_81CBF6,
+81CC7D,DATA_81CC7D,
+81CED7,LIST_ptrs_81CED7,
+81CEEC,LIST_data_81CEEC,
+81D062,plb_plp_RTS_81D062,
+81D0D9,LIST_ptrs_to_tamagotchi_description_text_81D0D9,
+81D1BD,TEXT_tamagotchi_descriptions_81D1BD,
+81DD6B,SUB_81DD6B,
+81FD2E,SUB_81FD2E,
+81FE05,SUB_81FE05,
+81FE12,SUB_81FE12,
+81FE1C,SUB_81FE1C,
+81FE3C,load_sound_data_from_ptr_in_CD_to_CF,
+81FE83,bank_wrap_ptr_81FE83,
+81FE8A,bank_wrap_ptr_81FE8A,
+81FE91,SUB_81FE91,
+81FED7,SUB_81FED7,
+81FEF3,initialize_SPC_transfer,
+81FF07,OUTER_LOOP_81FF07,
+81FF0F,INNER_LOOP_81FF0F,
+81FF2D,CODE_81FF2D,
+828013,SUB_828013,
+828051,SUB_828051,
+828116,DATA_818116,
+828180,LIST_subroutine_ptrs_828180,
+828190,SUB_828190,
+8281A9,SUB_8281A9,
+8281C2,SUB_8281C2,
+8281DB,SUB_8281DB,
+8281F4,LIST_subroutine_ptrs_8281F4,
+828204,RTS_828204,
+828205,SUB_828205,
+828210,SUB_828210,
+8285C5,SUB_8285C5,
+828696,DATA_828696,
+82879B,DATA_82879B,
+82879D,DATA_82879D,
+8287AF,DATA_8287AF,
+8288BD,DATA_8288BD,
+8288BF,DATA_8288BF,
+8288E1,DATA_8288E1,
+828A27,LIST_ptrs_828A27,
+828A42,DATA_828A42,
+828A54,DATA_828A54,
+828A5C,DATA_828A5C,
+828AC7,LIST_offsets_mults_of_0x20_828AC7,
+828AE7,SUB_828AE7,
+828AFB,LIST_subroutine_ptrs_828AFB,
+828B43,SUB_828B43,
+828B50,SUB_828B50,
+828B98,SUB_828B98,
+828BC9,DATA_828BC9,
+828BE0,SUB_828BE0,
+828C52,SUB_828C52,
+828CFB,DATA_828CFB,
+828CFD,DATA_828CFD,
+828DA2,SUB_828DA2,
+828DEE,DATA_828DEE,
+828E0E,SUB_828E0E,
+828E51,SUB_828E51,
+828E6C,LIST_subroutine_ptrs_828E6C,
+828E7A,SUB_828E7A,
+828E7B,SUB_828E7B,
+828E7D,SUB_828E7D,
+828EF0,SUB_828EF0,
+828F1F,DATA_828F1F,
+828F23,SUB_828F23,
+828F24,SUB_828F24,
+828F40,LIST_subroutine_ptrs_828F40,
+828F58,SUB_828F58,
+828F80,SUB_828F80,
+828FA8,SUB_828FA8,
+828FD0,SUB_828FD0,
+828FF8,SUB_828FF8,
+829020,SUB_829020,
+829048,SUB_829048,
+82906E,SUB_82906E,
+829094,SUB_829094,
+8290BA,SUB_8290BA,
+8290E0,SUB_8290E0,
+829106,SUB_829106,
+82912C,SUB_82912C,
+82913D,LIST_subroutines_82913D,
+829155,SUB_829155,
+829168,SUB_829168,
+829197,DATA_829197,
+829199,SUB_829199,
+8291C8,DATA_8291C8,
+8291CB,SUB_8291CB,
+8291FA,DATA_8291FA,
+8291FD,SUB_8291FD,
+82922C,DATA_82922C,
+829231,SUB_829231,
+829260,DATA_829260,
+829265,SUB_829265,
+829294,DATA_829294,
+8292FE,DATA_8292FE,
+829499,DATA_829499,
+82964E,DATA_82964E,
+82965C,DATA_82965C,
+82966A,DATA_82966A,
+829678,DATA_829678,
+829686,DATA_829686,
+829694,DATA_829694,
+8296A2,DATA_8296A2,
+8296B0,DATA_8296B0,
+8296BE,DATA_8296BE,
+8296CC,DATA_8296CC,
+8296DA,DATA_8296DA,
+8296E8,DATA_8296E8,
+8296F6,DATA_8296F6,
+829704,DATA_829704,
+829712,DATA_829712,
+829720,DATA_829720,
+829774,LIST_digit_encodings_with_high_priority_palette_1_829774,
+8297F5,LIST_data_values_8297F5,
+829803,LIST_offsets_829803,
+829841,DATA_829841,
+829879,DATA_829879,
+8298B1,DATA_8298B1,
+8298E9,DATA_8298E9,
+829A1A,LIST_bitmasks_829A1A,
+829B06,DATA_829B06,
+829B3A,DATA_829B3A,
+829B4A,SUB_829B4A,
+829D62,DATA_829D62,
+829D7A,DATA_829D7A,
+829D92,DATA_829D92,
+829DAA,DATA_829DAA,
+829EC7,DATA_829EC7,
+82A160,SUB_82A160,
+82A177,LIST_subroutine_ptrs_82A177,
+82A1BF,SUB_82A1BF,
+82A1C5,SUB_82A1C5,
+82A1F1,SUB_82A1F1,
+82A205,SUB_82A205,
+82A208,SUB_82A208,
+82A20D,SUB_82A20D,
+82A20E,SUB_82A20E,
+82A20F,SUB_82A20F,
+82A210,SUB_82A210,
+82A211,SUB_82A211,
+82A251,SUB_82A251,
+82A252,SUB_82A252,
+82A253,SUB_82A253,
+82A342,SUB_82A342,
+82A34D,SUB_82A34D,
+82A35C,SUB_82A35C,
+82A35D,SUB_82A35D,
+82A35E,SUB_82A35E,
+82A387,SUB_82A387,
+82A392,SUB_82A392,
+82A3A1,SUB_82A3A1,
+82A3A2,SUB_82A3A2,
+82A3A3,SUB_82A3A3,
+82A3B2,SUB_82A3B2,
+82A3B3,SUB_82A3B3,
+82A3B4,SUB_82A3B4,
+82A3B5,SUB_82A3B5,
+82A3B6,SUB_82A3B6,
+82A3B7,SUB_82A3B7,
+82A420,SUB_82A420,
+82A429,RTS_82A429,
+82A42A,RTS_82A42A,
+82A42B,RTS_82A42B,
+82A4DB,DATA_82A4DB,
+82A7A0,LIST_code_ptrs_82A7A0,
+82A7B0,CODE_82A7B0,
+82A7EB,CODE_82A7EB,
+82A814,CODE_82A814,
+82A8A8,LIST_code_ptrs_82A8A8,
+82A8B2,SUB_82A8B2,
+82A8BA,SUB_82A8BA,
+82A8CF,SUB_82A8CF,
+82A8DC,SUB_82A8DC,
+82A8E4,SUB_82A8E4,
+82A8F1,SUB_82A8F1,
+82A93C,DATA_82A93C,
+82A93D,DATA_82A93D,
+82AAD4,LIST_subroutine_ptrs_82AAD4,
+82AADC,SUB_82AADC,
+82AAF2,LIST_subroutine_ptrs_82AAF2,
+82AB12,SUB_82AB12,
+82AB28,LIST_subroutine_ptrs_82AB28,
+82AB38,SUB_82AB38,
+82AB4E,LIST_subroutine_ptrs_82AB4E,
+82AB5E,SUB_82AB5E,
+82AB74,LIST_subroutine_ptrs_82AB74,
+82AB84,SUB_82AB84,
+82ABB5,SUB_82ABB5,
+82ABE6,SUB_82ABE6,
+82AC17,SUB_82AC17,
+82AC48,SUB_82AC48,
+82ACC8,SUB_82ACC8,
+82AD48,SUB_82AD48,
+82ADC8,SUB_82ADC8,
+82AE48,SUB_82AE48,
+82AEC8,SUB_82AEC8,
+82AF56,SUB_82AF56,
+82AFD9,SUB_82AFD9,
+82AFDA,SUB_82AFDA,
+82AFFF,SUB_82AFFF,
+82B000,SUB_82B000,
+82B031,SUB_82B031,
+82B0B1,SUB_82B0B1,
+82B131,SUB_82B131,
+82B1BF,SUB_82B1BF,
+82B242,SUB_82B242,
+82B243,SUB_82B243,
+82B268,SUB_82B268,
+82B269,SUB_82B269,
+82B2E9,SUB_82B2E9,
+82B377,SUB_82B377,
+82B3FA,SUB_82B3FA,
+82B3FB,SUB_82B3FB,
+82B420,SUB_82B420,
+82B421,SUB_82B421,
+82B4A1,SUB_82B4A1,
+82B52F,SUB_82B52F,
+82B5B2,SUB_82B5B2,
+82B5B3,SUB_82B5B3,
+82B5D8,SUB_82B5D8,
+82B5D9,SUB_82B5D9,
+82B659,SUB_82B659,
+82B6E7,SUB_82B6E7,
+82B767,SUB_82B767,
+82B7EA,SUB_82B7EA,
+82B80F,SUB_82B80F,
+82B847,LIST_ptrs_82B847,
+82B874,LIST_values_82B874,
+82B892,DATA_82B892,
+82B9F5,DATA_82B9F5,
+82B9F7,DATA_82B9F7,
+82BA15,DATA_82BA15,
+82BA17,DATA_82BA17,
+82BA35,DATA_82BA35,
+82BE4A,DATA_82BE4A,
+82BE4C,DATA_82BE4C,
+82C17E,case_05_82C17E,
+82C187,case_0A_82C187,
+82C190,case_0F_82C190,
+82C199,case_14_82C199,
+82C1A2,CODE_82C1A2,
+82C1C2,CODE_82C1C2,
+82C1CC,plp_RTS_82C1CC,
+82C1CE,SUB_82C1CE,
+82C2AF,CODE_82C2AF,
+82C319,SUB_82C319,
+82C35F,CODE_82C35F,
+82C36D,SUB_82C36D,
+82C3EC,CODE_82C3EC,
+82C3FA,restore_regs_82C3FA,
+82C3FD,SUB_82C3FD,
+82C416,LIST_subroutine_ptrs_82C416,
+82C41E,SUB_82C41E,
+82C436,LIST_subroutine_ptrs_82C436,
+82C446,RTS_82C446,
+82C447,RTS_82C447,
+82C448,SUB_82C448,
+82C44B,SUB_82C44B,
+82C44E,SUB_82C44E,
+82C451,CODE_82C451,
+82C465,RTS_82C465,
+82C4FB,RTS_82C4FB,
+82C5A6,RTS_82C5A6,
+82C5A7,SUB_82C5A7,
+82C5AA,SUB_82C5AA,
+82C5F1,RTS_82C5F1,
+82C6D9,RTS_82C6D9,
+82C6DA,SUB_82C6DA,
+82C6F2,LIST_subroutine_ptrs_82C6F2,
+82C702,RTS_82C702,
+82C703,RTS_82C703,
+82C704,SUB_82C704,
+82C707,SUB_82C707,
+82C70A,SUB_8270A,
+82C70D,SUB_82C70D,
+82C710,CODE_82C710,
+82C7BA,RTS_82C7BA,
+82C7CF,RTS_82C7CF,
+82C806,RTS_82C806,
+82C866,SUB_82C866,
+82C8AD,RTS_82C8AD,
+82C988,RTS_82C988,
+82C989,RTS_82C989,
+82C98A,SUB_82C98A,
+82C9A2,SUB_82C9A2,
+82CDC8,restore_regs_RTS_82CDC8,
+82CE51,offsets_for_starts_of_82CE63_lists_82CE51,
+82CE63,DATA_82CE63,
+82CE94,DATA_82CE94,
+82CEA4,DATA_82CEA4,
+82D062,plp_RTS_82D062,
+82D2E9,DATA_82D2E9,
+82D3D6,plp_RTS_82D3D6,
+82D518,plp_RTS_82D518,
+82DA0D,CODE_82DA0D,
+82DAB6,SUB_82DAB6,
+82DC20,SUB_82DC20,
+82DC31,LIST_subroutine_ptrs_82DC31,
+82DC3B,SUB_82DC3B,
+82DC4C,LIST_subroutine_ptrs_82DC4C,
+82DC5A,SUB_82DC5A,
+82DC6B,LIST_subroutine_ptrs_82DC6B,
+82DC7D,SUB_82DC7D,
+82DC8C,LIST_subroutine_ptrs_82DC8C,
+82DC96,SUB_82DC96,
+82DCA5,LIST_subroutine_ptrs_82DCA5,
+82DCAF,SUB_82DCAF,
+82DCBE,LIST_subroutine_ptrs_82DCBE,
+82DCC8,SUB_82DCC8,
+82DCD7,LIST_subroutine_ptrs_82DCD7,
+82DCE1,SUB_82DCE1,
+82DD1A,SUB_82DD1A,
+82DD4C,SUB_82DD4C,
+82DD8E,SUB_82DD8E,
+82DDA9,LIST_subroutine_indices_82DDA9,
+82DDAD,SUB_82DDAD,
+82DDAE,SUB_82DDAE,
+82DDD3,SUB_82DDD3,
+82DDF9,SUB_82DDF9,
+82DEE7,SUB_82DEE7,
+82DF33,SUB_82DF33,
+82DF3F,SUB_82DF3F,
+82DF6F,SUB_82DF6F,
+82E06A,SUB_82E06A,
+82E0AA,SUB_82E0AA,
+82E175,SUB_82E175,
+82E1A9,DATA_82E1A9,
+82E1AC,SUB_82E1AC,
+82E1D5,SUB_82E1D5,
+82E1FB,SUB_82E1FB,
+82E34C,DATA_82E34C,
+82E34D,DATA_82E34D,
+82E352,DATA_82E352,
+82E354,DATA_82E354,
+82E356,DATA_82E356,
+82E358,DATA_82E358,
+82E36A,SUB_82E36A,
+82E36D,SUB_82E36D,
+82E370,SUB_82E370,
+82E41A,DATA_82E41A,
+82E423,SUB_82E423,
+82E456,SUB_82E456,
+82E488,SUB_82E488,
+82E5A2,SUB_82E5A2,
+82E5B5,SUB_82E5B5,
+82E5B6,SUB_82E5B6,
+82E5E9,SUB_82E5E9,
+82E61F,RTS_82E61F,
+82E620,SUB_82E620,
+82E660,CODE_82E660,
+82E66A,SUB_82E66A,
+82E675,SUB_82E675,
+82E6CB,CODE_82E6CB,
+82E775,DATA_82E775,
+82E879,DATA_82E879,
+82EA79,SUB_82EA79,
+82EA80,SUB_82EA80,
+82EB84,plp_RTS_82EB84,
+82EB8E,RTS_82EB8E,
+82EBAD,SUB_82EBAD,
+82EBBF,LIST_subroutine_ptrs_82EBBF,
+82EBD3,SUB_82EBD3,
+82ECDB,SUB_82ECDB,
+82ECF3,RTS_82ECF3,
+82ECF4,SUB_82ECF4,
+82ECFB,SUB_82ECFB,
+82ED03,SUB_82ED03,
+82ED07,SUB_82ED07,
+82ED0B,SUB_82ED0B,
+82ED18,SUB_82ED18,
+82ED19,SUB_82ED19,
+82ED1A,SUB_82ED1A,
+82ED44,SUB_82ED44,
+82EDD4,SUB_82EDD4,
+82EEAA,CODE_82EEAA,
+82EECC,plp_RTS_82EECC,
+82EECE,SUB_82EECE,
+82EEF1,SUB_82EEF1,
+82EF02,LIST_subroutine_ptrs_82EF02,
+82EF16,SUB_82EF16,
+82EF19,SUB_82EF19,
+82EFDE,SUB_82EFDE,
+82F098,RTS_82F098,
+82F099,SUB_82F099,
+82F0B5,SUB_82F0B5,
+82F0C2,SUB_82F0C2,
+82F0C3,SUB_82F0C3,
+82F0C4,SUB_82F0C4,
+82F0C5,SUB_82F0C5,
+82F0D0,SUB_82F0D0,
+82F35C,PLP_RTS_82F35C,
+82F35E,CODE_82F35E,
+82F381,LIST_indexes_into_text_ptr_table_82F381,
+82F387,LIST_indexes_into_text_ptr_table_82F387,
+82F4FF,SUB_82F4FF,
+82F6F3,SUB_82F6F3,
+82F712,SUB_82F712,
+82F97B,SUB_82F97B,
+82F97E,SUB_82F97E,
+82FA93,SUB_82FA93,
+82FA96,SUB_82FA96,
+82FB1F,SUB_82FB1F,
+82FB22,SUB_82FB22,
+82FB78,SUB_82FB78,
+82FB7B,SUB_82FB7B,
+838000,uncomp_gfx_0x600_bytes_838000,
+838600,VRAM_data_838600,
+838E00,VRAM_data_838E00,
+839600,VRAM_data_839600,
+839E00,VRAM_data_839E00,
+83A600,VRAM_data_83A600,
+83AE00,VRAM_data_83AE00,
+83B600,VRAM_data_83B600,
+83BE00,VRAM_data_83BE00,
+83C600,VRAM_data_83C600,
+83CE00,VRAM_data_83CE00,
+83D600,VRAM_data_83D600,
+83DE00,VRAM_data_83DE00,
+841DE0,OAM_buffer_bank_84,
+841FE0,OAM_sprite_sizes_bank_84,
+848000,COLOR_DATA_848000,
+848C00,LIST_offsets_to_data_in_bank_84_848C00,
+848F20,DATA_848F20,
+848F35,DATA_848F35,
+848F4A,DATA_848F4A,
+848F5F,DATA_848F5F,
+848F74,DATA_848F74,
+848F9D,DATA_848F9D,
+848FB2,DATA_848FB2,
+848FC7,DATA_848FC7,
+848FCD,DATA_848FCD,
+848FD3,DATA_848FD3,
+848FD9,DATA_848FD9,
+848FDF,DATA_848FDF,
+848FE5,DATA_848FE5,
+848FEB,DATA_848FEB,
+848FF1,DATA_848FF1,
+848FF7,DATA_848FF7,
+848FFD,DATA_848FFD,
+849003,DATA_849003,
+849009,DATA_849009,
+84900F,DATA_84900F,
+849015,DATA_849015,
+84901B,DATA_84901B,
+849021,DATA_849021,
+849027,DATA_849027,
+84902D,DATA_84902D,
+849033,DATA_849033,
+849039,DATA_849039,
+84908A,DATA_84908A,
+8490DB,DATA_8490DB,
+84912C,DATA_84912C,
+84917D,DATA_84917D,
+8491CE,DATA_8491CE,
+84921F,DATA_84921F,
+849270,DATA_849270,
+8492C1,DATA_8492C1,
+849330,DATA_849330,
+8493A9,DATA_8493A9,
+849418,DATA_849418,
+849487,DATA_849487,
+849500,DATA_849500,
+849579,DATA_849579,
+8495F2,DATA_8495F2,
+84966B,DATA_84966B,
+8496E4,DATA_8496E4,
+849744,DATA_849744,
+84974A,DATA_84974A,
+849750,DATA_849750,
+849756,DATA_849756,
+8497A7,DATA_8497A7,
+8497BC,DATA_8497BC,
+8497C2,DATA_8497C2,
+8497C8,DATA_8497C8,
+8497CE,DATA_8497CE,
+8497D4,DATA_8497D4,
+8497DA,DATA_8497DA,
+8497E0,DATA_8497E0,
+8497E6,DATA_8497E6,
+8497EC,DATA_8497EC,
+8497F2,DATA_8497F2,
+8497F8,DATA_8497F8,
+8497FE,DATA_8497FE,
+849804,DATA_849804,
+84980A,DATA_84980A,
+849810,DATA_849810,
+849816,DATA_849816,
+84981C,DATA_84981C,
+849822,DATA_849822,
+849828,DATA_849828,
+84982E,DATA_84982E,
+849834,DATA_849834,
+84983A,DATA_84983A,
+849840,DATA_849840,
+849846,DATA_849846,
+84984C,DATA_84984C,
+849852,DATA_849852,
+849858,DATA_849858,
+84985E,DATA_84985E,
+849864,DATA_849864,
+84986A,DATA_84986A,
+849870,DATA_849870,
+849876,DATA_849876,
+84987C,DATA_84987C,
+849882,DATA_849882,
+849888,DATA_849888,
+84988E,DATA_84988E,
+849894,DATA_849894,
+84989A,DATA_84989A,
+8498A0,DATA_8498A0,
+8498A6,DATA_8498A6,
+8498AC,DATA_8498AC,
+8498B2,DATA_8498B2,
+8498B8,DATA_8498B8,
+8498BE,DATA_8498BE,
+8498C4,DATA_8498C4,
+8498CA,DATA_8498CA,
+8498D0,DATA_8498D0,
+8498D6,DATA_8498D6,
+8498DC,DATA_8498DC,
+8498E2,DATA_8498E2,
+8498E8,DATA_8498E8,
+8498EE,DATA_8498EE,
+8498F4,DATA_8498F4,
+8498FA,DATA_8498FA,
+849900,DATA_849900,
+849906,DATA_849906,
+84990C,DATA_84990C,
+849912,DATA_849912,
+849918,DATA_849918,
+84991E,DATA_84991E,
+849924,DATA_849924,
+84992A,DATA_84992A,
+849930,DATA_849930,
+849936,DATA_849936,
+84993C,DATA_84993C,
+849942,DATA_849942,
+849948,DATA_849948,
+84994E,DATA_84994E,
+849954,DATA_849954,
+84995A,DATA_84995A,
+849960,DATA_849960,
+849966,DATA_849966,
+84996C,DATA_84996C,
+849972,DATA_849972,
+849978,DATA_849978,
+84997E,DATA_84997E,
+849984,DATA_849984,
+84998A,DATA_84998A,
+849990,DATA_849990,
+849996,DATA_849996,
+84999C,DATA_84999C,
+8499A2,DATA_8499A2,
+8499A8,DATA_8499A8,
+8499AE,DATA_8499AE,
+8499B4,DATA_8499B4,
+8499BA,DATA_8499BA,
+8499C0,DATA_8499C0,
+8499C6,DATA_8499C6,
+8499CC,DATA_8499CC,
+8499D2,DATA_8499D2,
+8499D8,DATA_8499D8,
+8499DE,DATA_8499DE,
+8499E4,DATA_8499E4,
+8499EA,DATA_8499EA,
+8499F0,DATA_8499F0,
+8499F6,DATA_8499F6,
+8499FC,DATA_8499FC,
+849A02,DATA_849A02,
+849A08,DATA_849A08,
+849A0E,DATA_849A0E,
+849A14,DATA_849A14,
+849A1A,DATA_849A1A,
+849A20,DATA_849A20,
+849A26,DATA_849A26,
+849A2C,DATA_849A2C,
+849A32,DATA_849A32,
+849A38,DATA_849A38,
+849A3E,DATA_849A3E,
+849A44,DATA_849A44,
+849A4A,DATA_849A4A,
+849A50,DATA_849A50,
+849A56,DATA_849A56,
+849A5C,DATA_849A5C,
+849A62,DATA_849A62,
+849A68,DATA_849A68,
+849A6E,DATA_849A6E,
+849A74,DATA_849A74,
+849A7A,DATA_849A7A,
+849A80,DATA_849A80,
+849A86,DATA_849A86,
+849A8C,DATA_849A8C,
+849A97,DATA_849A97,
+849A9D,DATA_849A9D,
+849AA3,DATA_849AA3,
+849AA9,DATA_849AA9,
+849AAF,DATA_849AAF,
+849AB5,DATA_849AB5,
+849ABB,DATA_849ABB,
+849AC1,DATA_849AC1,
+849AC7,DATA_849AC7,
+849B18,DATA_849B18,
+849B1E,DATA_849B1E,
+849B24,DATA_849B24,
+849B2A,DATA_849B2A,
+849B7B,DATA_849B7B,
+849B81,DATA_849B81,
+849B87,DATA_849B87,
+849B8D,DATA_849B8D,
+849B93,DATA_849B93,
+849B99,DATA_849B99,
+849B9F,DATA_849B9F,
+849BA5,DATA_849BA5,
+849BAB,DATA_849BAB,
+849BC0,DATA_849BC0,
+849BC6,DATA_849BC6,
+849BCC,DATA_849BCC,
+849BD2,DATA_849BD2,
+849BD8,DATA_849BD8,
+849BDE,DATA_849BDE,
+849BE4,DATA_849BE4,
+849BEA,DATA_849BEA,
+849BF0,DATA_849BF0,
+849BF6,DATA_849BF6,
+849BFC,DATA_849BFC,
+849C02,DATA_849C02,
+849C08,DATA_849C08,
+849C0E,DATA_849C0E,
+849C14,DATA_849C14,
+849C1A,DATA_849C1A,
+849C20,DATA_849C20,
+849C26,DATA_849C26,
+849C2C,DATA_849C2C,
+849C32,DATA_849C32,
+849C38,DATA_849C38,
+849C3E,DATA_849C3E,
+849C44,DATA_849C44,
+849C4A,DATA_849C4A,
+849C50,DATA_849C50,
+849C56,DATA_849C56,
+849C5C,DATA_849C5C,
+849C62,DATA_849C62,
+849C68,DATA_849C68,
+849C6E,DATA_849C6E,
+849C74,DATA_849C74,
+849C7A,DATA_849C7A,
+849C80,DATA_849C80,
+849C86,DATA_849C86,
+849C8C,DATA_849C8C,
+849C92,DATA_849C92,
+849C98,DATA_849C98,
+849C9E,DATA_849C9E,
+849CA4,DATA_849CA4,
+849CAA,DATA_849CAA,
+849CB0,DATA_849CB0,
+849CB6,DATA_849CB6,
+849CBC,DATA_849CBC,
+849CC2,DATA_849CC2,
+849CC8,DATA_849CC8,
+849CCE,DATA_849CCE,
+849CD4,DATA_849CD4,
+849CDA,DATA_849CDA,
+849CE0,DATA_849CE0,
+849CE6,DATA_849CE6,
+849CEC,DATA_849CEC,
+849CF2,DATA_849CF2,
+849CF8,DATA_849CF8,
+849CFE,DATA_849CFE,
+849D04,DATA_849D04,
+849D0A,DATA_849D0A,
+849D10,DATA_849D10,
+849D16,DATA_849D16,
+849D1C,DATA_849D1C,
+849D22,DATA_849D22,
+849D28,DATA_849D28,
+849D2E,DATA_849D2E,
+849D34,DATA_849D34,
+849D3A,DATA_849D3A,
+849D40,DATA_849D40,
+849D46,DATA_849D46,
+849D4C,DATA_849D4C,
+849D52,DATA_849D52,
+849D58,DATA_849D58,
+849D5E,DATA_849D5E,
+849D64,DATA_849D64,
+849D6A,DATA_849D6A,
+849D70,DATA_849D70,
+849D76,DATA_849D76,
+849D7C,DATA_849D7C,
+849D82,DATA_849D82,
+849D88,DATA_849D88,
+849D8E,DATA_849D8E,
+849D94,DATA_849D94,
+849D9A,DATA_849D9A,
+849DA0,DATA_849DA0,
+849DA6,DATA_849DA6,
+849DAC,DATA_849DAC,
+849DB2,DATA_849DB2,
+849DB8,DATA_849DB8,
+849DBE,DATA_849DBE,
+849DC4,DATA_849DC4,
+849DCA,DATA_849DCA,
+849DD0,DATA_849DD0,
+849DD6,DATA_849DD6,
+849DDC,DATA_849DDC,
+849DE2,DATA_849DE2,
+849DE8,DATA_849DE8,
+849DEE,DATA_849DEE,
+849DF4,DATA_849DF4,
+849DFA,DATA_849DFA,
+849E00,DATA_849E00,
+849E06,DATA_849E06,
+849E0C,DATA_849E0C,
+849E12,DATA_849E12,
+849E18,DATA_849E18,
+849E1E,DATA_849E1E,
+849E24,DATA_849E24,
+849E2A,DATA_849E2A,
+849E30,DATA_849E30,
+849E36,DATA_849E36,
+849E3C,DATA_849E3C,
+849E42,DATA_849E42,
+849E48,DATA_849E48,
+849E4E,DATA_849E4E,
+849E54,DATA_849E54,
+849E5A,DATA_849E5A,
+849E60,DATA_849E60,
+849E66,DATA_849E66,
+849E6C,DATA_849E6C,
+849E72,DATA_849E72,
+849E78,DATA_849E78,
+849E7E,DATA_849E7E,
+849E84,DATA_849E84,
+849E8A,DATA_849E8A,
+849E90,DATA_849E90,
+849E96,DATA_849E96,
+849E9C,DATA_849E9C,
+849EA2,DATA_849EA2,
+849EA8,DATA_849EA8,
+849EAE,DATA_849EAE,
+849EB4,DATA_849EB4,
+849EBA,DATA_849EBA,
+849EC0,DATA_849EC0,
+849EC6,DATA_849EC6,
+849ECC,DATA_849ECC,
+849ED2,DATA_849ED2,
+849ED8,DATA_849ED8,
+849EDE,DATA_849EDE,
+849EE4,DATA_849EE4,
+849EEA,DATA_849EEA,
+849EF0,DATA_849EF0,
+849EF6,DATA_849EF6,
+849EFC,DATA_849EFC,
+849F02,DATA_849F02,
+849F08,DATA_849F08,
+849F0E,DATA_849F0E,
+849F14,DATA_849F14,
+849F1A,DATA_849F1A,
+849F20,DATA_849F20,
+849F26,DATA_849F26,
+849F2C,DATA_849F2C,
+849F32,DATA_849F32,
+849F38,DATA_849F38,
+849F3E,DATA_849F3E,
+849F44,DATA_849F44,
+849F4A,DATA_849F4A,
+849F50,DATA_849F50,
+849F56,DATA_849F56,
+849F5C,DATA_849F5C,
+849F62,DATA_849F62,
+849F68,DATA_849F68,
+849F6E,DATA_849F6E,
+849F74,DATA_849F74,
+849F7A,DATA_849F7A,
+849F80,DATA_849F80,
+849F86,DATA_849F86,
+849F8C,DATA_849F8C,
+849F92,DATA_849F92,
+849F98,DATA_849F98,
+849F9E,DATA_849F9E,
+849FA4,DATA_849FA4,
+849FAA,DATA_849FAA,
+849FB0,DATA_849FB0,
+849FB6,DATA_849FB6,
+849FBC,DATA_849FBC,
+849FC2,DATA_849FC2,
+849FC8,DATA_849FC8,
+849FCE,DATA_849FCE,
+849FD4,DATA_849FD4,
+849FDA,DATA_849FDA,
+849FE0,DATA_849FE0,
+849FE6,DATA_849FE6,
+849FEC,DATA_849FEC,
+849FF2,DATA_849FF2,
+849FF8,DATA_849FF8,
+84A00D,DATA_84A00D,
+84A022,DATA_84A022,
+84A037,DATA_84A037,
+84A0D8,DATA_84A0D8,
+84A179,DATA_84A179,
+84A21A,DATA_84A21A,
+84A2A7,DATA_84A2A7,
+84A334,DATA_84A334,
+84A3C1,TEXT_PTR_TABLE_84A3C1,
+84CA71,SUB_84CA71,
+84CA74,SUB_84CA74,
+84CA83,LIST_subroutine_ptrs_84CA83,
+84CA97,SUB_84CA97,
+84CAEC,SUB_84CAEC,
+84CAF2,SUB_84CAF2,
+84CAF8,SUB_84CAF8,
+84CB0B,SUB_84CB0B,
+84CB0C,SUB_84CB0C,
+84CB0D,SUB_84CB0D,
+84CB0E,SUB_84CB0E,
+84CB0F,SUB_84CB0F,
+84CB10,SUB_84CB10,
+84CB55,CODE_84CB55,
+84CB69,DATA_84CB69,
+850A4E,SUB_850A4E,
+858000,SPC_DATA_858000,
+85A000,LIST_offsets_from_85A000,
+868000,SUB_868000,
+868008,check_6A00_868008,
+868039,check_6A12_868039,
+86806A,check_6A24_86806A,
+86809B,check_6A36_86809B,
+8680CC,check_6A48_8680CC,
+8680FD,check_6A5A_8680FD,
+86812E,check_6A6C_86812E,
+86815F,check_6A7E_86815F,
+868190,check_6A90_868190,
+8681C1,check_6AA2_8681C1,
+8681F2,check_6AB4_8681F2,
+868223,check_6AC6_868223,
+868254,check_6AD8_868254,
+868285,check_6AEA_868285,
+8682B6,check_6AFC_8682B6,
+8682E7,check_6B0E_8682E7,
+868318,check_6B20_868318,
+868349,check_6B32_868349,
+86837A,check_6B44_86837A,
+8683AB,check_6B56_8683AB,
+8683DC,check_6B68_8683DC,
+86840D,check_6B7A_86840D,
+86843E,check_6B8C_86843E,
+86846F,check_6B9E_86846F,
+8684A0,check_6BB0_8684A0,
+8684D1,check_6BC2_8684D1,
+868502,check_6BD4_868502,
+868533,check_6BE6_868533,
+868564,check_6BF8_868564,
+868595,check_6C0A_868595,
+8685C6,check_6C1C_8685C6,
+8685F7,check_6C2E_8685F7,
+868628,check_6C40_868628,
+868659,check_6C52_868659,
+86868A,check_6C64_86868A,
+8686BB,check_6C76_8686BB,
+8686EC,check_6C88_8686EC,
+86871D,check_6C9A_86871D,
+86874E,check_6CAC_86874E,
+86877F,check_6CBE_86877F,
+8687B0,check_6CD0_8687B0,
+8687E1,check_6CE2_8687E1,
+868812,check_6CF4_868812,
+868843,check_6D06_868843,
+868874,check_6D18_868874,
+8688A5,check_6D2A_8688A5,
+8688D6,check_6D3C_8688D6,
+868907,check_6D4E_868907,
+868938,check_6D60_868938,
+868969,check_6D72_868969,
+86899A,check_6D84_86899A,
+8689CB,check_6D96_8689CB,
+8689FC,check_6DA8_8689FC,
+868A2D,check_6DBA_868A2D,
+868A5E,check_6DCC_868A5E,
+868A8F,check_6DDE_868A8F,
+868AC0,check_6DF0_868AC0,
+868AF1,check_6E02_868AF1,
+868B22,check_6E14_868B22,
+868B53,check_6E26_86853,
+868B84,check_6E38_868B84,
+868BB5,check_6E4A_868BB5,
+868BE6,check_6E5C_868BE6,
+868C17,check_6E6E_868C17,
+868C48,check_6E80_868C48,
+868C79,check_6E92_868C79,
+868CAA,check_6EA4_868CAA,
+868CDB,check_6EB6_868CDB,
+868D0C,check_6EC8_868D0C,
+868D3D,check_6EDA_868D3D,
+868D6E,check_6EEC_868D6E,
+868D9F,check_6EFE_868D9F,
+868DD0,check_6F10_868DD0,
+868E01,check_6F22_868E01,
+868E32,check_6F34_868E32,
+868E63,check_6F46_868E63,
+868E94,check_6F58_868E94,
+868EC5,check_6F6A_868EC5,
+868EF6,check_6F7C_868EF6,
+868F27,check_6F8E_868F27,
+868F58,check_6FA0_868F58,
+868F89,check_6FB2_868F89,
+868FBA,check_6FC4_868FBA,
+868FEB,check_6FD6_868FEB,
+86901C,check_6FE8_86901C,
+86904D,check_6FFA_86904D,
+86907E,check_700C_86907E,
+8690AF,check_701E_8690AF,
+8690E0,check_7030_8690E0,
+869111,check_7042_869111,
+869142,check_7054_869142,
+869173,check_7066_869173,
+8691A4,check_7078_8691A4,
+8691D5,check_708A_8691D5,
+869206,check_709C_869206,
+869237,check_70AE_869237,
+869268,check_70C0_869268,
+869299,check_70D2_869299,
+8692CA,check_70E4_8692CA,
+8692FB,check_70F6_8692FB,
+86932C,check_7108_86932C,
+86935D,check_711A_86935D,
+86938E,check_712C_86938E,
+8693BF,check_713E_8693BF,
+8693F0,check_7150_8693F0,
+869421,check_7162_869421,
+869452,check_7174_869452,
+869483,check_7186_869483,
+8694B4,check_7198_8694B4,
+8694E5,check_71AA_8694E5,
+869516,check_71BC_869516,
+869547,check_71CE_869547,
+869578,check_71E0_869578,
+8695A9,check_71F2_8695A9,
+8695DA,check_7204_8695DA,
+86960B,check_7216_86960B,
+86963C,check_7228_86963C,
+86966D,check_723A_86966D,
+86969E,check_724C_86969E,
+8696CF,check_725E_8696CF,
+869700,check_7270_869700,
+869731,check_7282_869731,
+869762,check_7294_869762,
+869793,check_72A6_869793,
+8697C4,check_72B8_8697C4,
+8697F5,check_72CA_8697F5,
+869826,check_72DC_869826,
+869857,check_72EE_869857,
+869888,PLB_PLP_RTL_869888,
+86988B,SUB_86988B,
+888000,GFX_PTR_LIST_888000,
+88818C,GFX_ID_00,
+8891DF,GFX_ID_01,
+8896FB,GFX_02_8896FB,
+938000,DATA_938000,
+94D690,DATA_94D690,
+988000,UNCOMP_4bpp_GFX_start,

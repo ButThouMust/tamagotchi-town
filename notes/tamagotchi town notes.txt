@@ -1,0 +1,137 @@
+Important code for text printing control flow?
+$8194c6:
+jsl $819523 ; partially fill in data block at $7E5800 with something
+jsl $81960f ; read from ptr table and fill in tile IDs based on text at pointer
+jsl $818b5d ; set DMA ch 5 parameters to 0x01, set DMA B bus to VRAM low byte
+rtl
+
+Labels in code:
+$819635: calculate position in pointer table
+$81963B: get a pointer to text from the pointer table
+($819647: set tile position to start of text box)
+$81964A: read a text value (two bytes) from pointer
+- $819653: general case (sets tile to high priority, copy all 4 tiles for char)
+- $81965F: got a space character [0142]
+- $819665: got a control code [8000+], see bottom of writeup
+
+--------------------------------------------------------------------------------
+
+The text is uncompressed and uses a two-byte encoding.
+Specifically, the whole font is DMA'd into VRAM (layer BG3) upon startup.
+It is 2bpp and uses 16x16 characters.
+- However, the game seems to use another font (same format as "main" one, but
+  with some different characters) for descriptions of Tamagotchis.
+
+The text is encoded with the tile number for the top left tile of a character,
+assuming you look at VRAM with a width of 16 tiles. So the order goes:
+0000, 0002, 0004, 0006, ..., 000C, 000E
+0020, 0022, 0024, 0026, ..., 002C, 002E
+0040, 0042, ...,        ..., 004C, 004E
+...   ...         ....       ...   ...
+03C0, 03C2, ...,        ..., 03CC, 03CE
+03E0, 03E2, 03E4, 03E8, done
+
+Which is to say, one character right is 2 tiles right (column = low hex digit),
+and one character down is 2 tiles down (row = middle two hex digits).
+
+--------------------------------------------------------------------------------
+
+Text is printed on screen by using a 0x800 byte buffer at $7E5800.
+This contains the raw tilemap for text and is DMA'd to VRAM.
+
+$819A02: helper subroutine that, given the tile ID for the top left tile of a
+character, copies the tile IDs for the top right, bottom left, and bottom right 
+into the appropriate positions in the tilemap buffer in bank 7E
+
+    Note: it is possible to modify this subroutine to make it print half-width
+    characters (8x16) instead of full-width characters (16x16).
+    See the included Asar assembly file.
+
+$59: X/Y position for text block on screen?
+
+$5C-$5E: buffer for pointer from table
+$9C: index for pointer table; corroborated by how value is multiplied by 3
+     to get actual byte offset in pointer table
+
+--------------------------------------------------------------------------------
+
+Distinct sections for text:
+
+$81D0D9-$81D1BC: pointer table (24-bit ptrs) for tamagotchi description text
+The text spans from $81D1BD to $81FCE6.
+
+---
+
+$84A3C1-$84A5DC: pointer table (24-bit ptrs) for all other text
+In practice, pointer table goes from $84A3C4-$84A5D6.
+000000 84A5DD 84A6C7 ... 84CA31 84CA71 84CA71
+The text spans from $84A5DD to $84CA70. The duplicated $84CA71 points to code.
+
+---
+
+$819A23-$819A36: List of the ten digits 0 to 9 in two-byte encoding.
+The tile IDs have flags set for high priority (0x2000).
+
+---
+
+$81B0F7-$81B10A: List of the ten digits 0 to 9 in two-byte encoding.
+The tile IDs have flags set for high priority (0x2000) AND palette 1 (0x0400).
+This set is specifically for showing the number ID for Tamagotchi descriptions.
+
+Related are dash characters that surround the number ID's digits.
+They are the value [66 26] at $81B0B7 and $81B0EB.
+
+--------------------------------------------------------------------------------
+
+Value 0142 is a space character.
+Value 0000 should be unused (not a font character).
+
+Control codes have their MSB set and have a table of assembly code positions
+at $819671 - $8196E4. You will have to fill in their functions yourself as you
+play the game, but 8000 does a line break, 8001 goes to the next text box, and
+8002 indicates "end of text block".
+
+00-07: 96E5 96F0 96FB 9706 970F 9718 9721 972A
+08-0F: 9733 973C 9745 974E 9757 9760 9769 9772
+10-17: 97B2 0000 0000 0000 0000 0000 0000 0000
+18-1F: 0000 0000 0000 0000 0000 0000 0000 0000
+20-27: 97BB 97C5 97CF 97DC 97E9 97F3 97FD 9807
+28-2F: 9811 981A 9823 982C 9836 9840 984A 9853
+30-37: 985C 9865 986E 9877 9880 9889 9892 989B
+38-39: 98A4 98AD
+
+Note: check if "control codes 20-39" are their own separate list or not.
+
+Several of these control codes involve printing a data value to the screen.
+Relevant subroutines include:
+- $819994: print 4 decimal digits, no right align
+- $8198B6: print 2 decimal digits, right aligned
+- $819929: print 4 BCD digits, right aligned
+- $819958: print 3 BCD digits, right aligned
+- $8198DF: ?, see ctrl code 10
+- $8199DC: ?, see ctrl code 28, 29, 2A
+
+--------------------------------------------------------------------------------
+
+Several of the game's graphics contain Japanese text and are compressed.
+The short explanation is that the game uses a flavor of LZSS encoding.
+
+There are 0x63 "graphics IDs" as I'll call them. The pointer table for each ID
+exists in $888000-$88818B. Each pointer is 24-bit, but each entry is 32-bits
+with an extra [00] for some reason.
+
+In particular, you will want to focus on graphics IDs 0x10 (16) and 0x3E (62),
+which contain the game's fonts. 0x3E is for descriptions of Tamagotchis, and
+0x10 is the rest of the game's text.
+
+Pseudocode representation:
+Given one of these pointers, seek to that location in the ROM.
+The first two bytes at the pointer are the size of the decompressed data.
+After this is one byte containing 8 bit flags, which you read from LSB to MSB.
+- Bit flag 0? Simply read one byte directly into the decompression buffer.
+- Bit flag 1? Read a two byte value for reusing already decompressed data.
+  In big endian: [FEDCBA98 76543210], split up into FEDC 76543210 and BA98
+    12-bit value: go back this many bytes in decompression buffer, plus 1
+     4-bit value: this, plus 3, is the size of the match
+  For example, 6FB3 -> 6B3 and F -> go back 0x6B4 bytes for a match of size 0x12
+Keep reading bit flag bytes and data until the decompression size is reached.
