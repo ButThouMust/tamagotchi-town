@@ -26,13 +26,13 @@ SHA-256:	a5fd9970e5d2a23f1f910952823f481572db8bb49f59587b2b901feb66b9b19a
 # Why I did this
 You're probably asking something to the effect of, "If you don't care about Tamagotchis, why did you bother working on this?" Short answer, I was bored.
 
-A user `aaamdacagua` in what used to be the romhacking.net Discord (now the Discord for romhack.ing) had made a post/thread there in late October 2023 about wanting to work on this game. They and another user who joined in, `Bunkai`, were having some trouble figuring out the game's text encoding. They had already IDed most of the characters in the font but were stumped about what hex values went to what characters.
+A user `aaamdacuaga` in what used to be the romhacking.net Discord (now the Discord for romhack.ing) had made a post/thread there in late October 2023 about wanting to work on this game. They and another user who joined in, `Bunkai`, were having some trouble figuring out the game's text encoding. They had already IDed most of the characters in the font but were stumped about what hex values went to what characters.
 
 TL;DR: The encoding order is conceptually similar to values going `00 01 02 03...`, but not this order verbatim. Importantly, the order made it so a basic relative search wouldn't help much.
 
 I had been working on translating [Otogirisou](https://github.com/ButThouMust/otogirisou-en-beta), saw the post, and thought, "It's a Tamagotchi game. How difficult can it be?" I was itching for a programming/RE challenge anyway after doing translation work.
 
-It took a few hours, but I ended up finding the game's text printing routine, the encoding order, and the script's uncompressed text. I shared my notes there. In retrospect, I do feel like I had robbed the learning opportunity from aaamdacagua, but I suppose that someone would have figured it out eventually.
+It took a few hours, but I ended up finding the game's text printing routine, the encoding order, and the script's uncompressed text. I shared my notes there. In retrospect, I do feel like I had robbed the learning opportunity from aaamdacuaga, but I suppose that someone would have figured it out eventually.
 
 About a week later, I tried looking into how the game's two fonts were stored in the game. It turned out that they were compressed, and I was able to get a graphics decompressor working for it. It also ended up being the same compression format for a lot of other graphics in the game. I shared the decompressor source code on the Discord, and that was where activity in the Discord post/thread ended.
 
