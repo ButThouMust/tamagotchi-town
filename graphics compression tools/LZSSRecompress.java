@@ -162,14 +162,14 @@ public class LZSSRecompress {
                     // L = 2: encode the first matched byte as a literal, but
                     // the second matched byte may be the start of a match
                     case 2:
-                        LZTag tag = new LZSSRecompress().new LZTag(currPos - 2, NO_MATCH, 1, false);
-                        tags.add(tag);
+                        tagPtr = currPos - 2;
+                        size = 1;
+                        isMatch = false;
+                        tagIndex = NO_MATCH;
 
-                        // set to look for a match starting at the 2nd byte
+                        // set to look for a match starting @ 2nd matched byte
                         currPos--;
-                        stringToSearch = "";
-                    continue;
-                    // break;
+                    break;
 
                     // L > 2: handle the match; don't consume unmatched byte
                     default:
