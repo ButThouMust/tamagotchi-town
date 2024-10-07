@@ -4,3 +4,9 @@
 # Do not upload ROMs, original or otherwise
 **/*.sfc
 **/*.smc
+
+# Do not upload decompressed graphics from the ROM (copyrighted data)
+gfx/**
+
+# Do not upload compiled Java bytecode
+**/*.class
