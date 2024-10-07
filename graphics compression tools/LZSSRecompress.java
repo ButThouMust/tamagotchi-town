@@ -29,32 +29,32 @@ public class LZSSRecompress {
 
     private class LZTag {
         int ptrToTag;
-        int matchIndex;
+        int ptrToMatch;
         int length;
         boolean isMatch;
 
-        public LZTag(int ptrToTag, int matchIndex, int length, boolean isMatch) {
+        public LZTag(int ptrToTag, int ptrToMatch, int length, boolean isMatch) {
             this.ptrToTag = ptrToTag;
-            this.matchIndex = matchIndex;
+            this.ptrToMatch = ptrToMatch;
             this.length = length;
             this.isMatch = isMatch;
         }
 
         public LZTag(LZTag other) {
             ptrToTag = other.ptrToTag;
-            matchIndex = other.matchIndex;
+            ptrToMatch = other.ptrToMatch;
             length = other.length;
             isMatch = other.isMatch;
         }
 
         public int getDistance() {
-            return ptrToTag - matchIndex;
+            return ptrToTag - ptrToMatch;
         }
 
         public String toString() {
             if (isMatch) {
                 String format = "%4X | L=0x%4X, match @ 0x%4X";
-                return String.format(format, ptrToTag, length, matchIndex);
+                return String.format(format, ptrToTag, length, ptrToMatch);
             }
             else {
                 String format = "%4X | Lit  [%02X]";
@@ -137,7 +137,7 @@ public class LZSSRecompress {
                 int matchSize = length - 1;
                 int tagPtr = currPos;
                 int size = 0;
-                int tagIndex = NO_MATCH;
+                int matchPtr = NO_MATCH;
                 boolean isMatch = false;
 
                 switch (matchSize) {
@@ -146,7 +146,7 @@ public class LZSSRecompress {
                         tagPtr = currPos;
                         size = 1;
                         isMatch = false;
-                        tagIndex = NO_MATCH;
+                        matchPtr = NO_MATCH;
                         currPos++;
                     break;
 
@@ -156,7 +156,7 @@ public class LZSSRecompress {
                         tagPtr = currPos - 1;
                         size = 1;
                         isMatch = false;
-                        tagIndex = NO_MATCH;
+                        matchPtr = NO_MATCH;
                     break;
 
                     // L = 2: encode the first matched byte as a literal, but
@@ -165,7 +165,7 @@ public class LZSSRecompress {
                         tagPtr = currPos - 2;
                         size = 1;
                         isMatch = false;
-                        tagIndex = NO_MATCH;
+                        matchPtr = NO_MATCH;
 
                         // set to look for a match starting @ 2nd matched byte
                         currPos--;
@@ -176,10 +176,10 @@ public class LZSSRecompress {
                         tagPtr = currPos - matchSize;
                         size = matchSize;
                         isMatch = true;
-                        tagIndex = indexOfLastMatchFragment;
+                        matchPtr = indexOfLastMatchFragment;
                     break;
                 }
-                LZTag tag = new LZSSRecompress().new LZTag(tagPtr, tagIndex, size, isMatch);
+                LZTag tag = new LZSSRecompress().new LZTag(tagPtr, matchPtr, size, isMatch);
                 tags.add(tag);
 
                 stringToSearch = "";
@@ -230,8 +230,7 @@ public class LZSSRecompress {
 
     private static int getBytesThatEncodeMatch(LZTag tag) {
         int encodedLength = tag.length - MIN_MATCH_SIZE;
-        int distanceBack = tag.ptrToTag - tag.matchIndex;
-        int encodedDistance = distanceBack - 1;
+        int encodedDistance = tag.getDistance() - 1;
 
         int outputByte0 = encodedDistance & 0xFF;
         int outputByte1 = encodedLength & 0xF;
